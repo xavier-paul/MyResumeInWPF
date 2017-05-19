@@ -33,12 +33,13 @@ namespace MyResume
             m_skillsList.ItemsSource = v_myResume.Skills;
 
             //grouper par Catégorie : http://www.wpf-tutorial.com/listview-control/listview-grouping/
-            CollectionView view = (CollectionView) CollectionViewSource.GetDefaultView(m_skillsList.ItemsSource);
-            PropertyGroupDescription groupDescription = new PropertyGroupDescription("Catégorie");
-            view.GroupDescriptions.Add(groupDescription);
-
-
+            CollectionView v_view = (CollectionView) CollectionViewSource.GetDefaultView(m_skillsList.ItemsSource);
+            PropertyGroupDescription v_groupDescription = new PropertyGroupDescription("Value.Group");
+            v_view.GroupDescriptions.Add(v_groupDescription);
+            
             m_languagesList.ItemsSource = v_myResume.Languages;
+
+            m_trainingList.ItemsSource = v_myResume.Learning;
         }
        
     }

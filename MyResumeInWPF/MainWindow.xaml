@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MyResume"
         mc:Ignorable="d"
-        Title="Mon CV" Height="350" Width="722.273" AllowsTransparency="True" WindowStyle="None" Topmost="True" ResizeMode="CanMinimize" Cursor="Hand">
+        Title="Mon CV" Height="350" Width="722.273" AllowsTransparency="True" WindowStyle="None" Topmost="True" ResizeMode="CanMinimize" Cursor="Hand" WindowStartupLocation="CenterScreen">
     <Window.Effect>
         <DropShadowEffect/>
     </Window.Effect>
@@ -59,7 +59,7 @@
                             <GroupStyle>
                                 <GroupStyle.HeaderTemplate>
                                     <DataTemplate>
-                                        <TextBlock FontWeight="Bold" FontSize="14" Text="{Binding Value.Group}"/>
+                                        <TextBlock FontWeight="Bold" Text="{Binding Value.Group}"/>
                                     </DataTemplate>
                                 </GroupStyle.HeaderTemplate>
                             </GroupStyle>
@@ -74,6 +74,18 @@
                             <TextBlock Text="Formation continue" Foreground="Green" />
                         </StackPanel>
                     </TabItem.Header>
+
+                    <ListView Margin="10" Name="m_trainingList">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <WrapPanel>
+                                    <TextBlock Text="{Binding Value.Year}" FontWeight="Thin" Foreground="BlueViolet"/>
+                                    <TextBlock Text="{Binding Value.Description}" FontWeight="Bold" Foreground="BlueViolet"/>
+                                    <TextBlock Text="{Binding Value.Firm}" FontWeight="Light" Foreground="BlueViolet"/>
+                                </WrapPanel>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
                 </TabItem>
                 <TabItem>
                     <TabItem.Header>

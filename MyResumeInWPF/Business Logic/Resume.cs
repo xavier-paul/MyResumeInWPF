@@ -12,7 +12,7 @@ namespace MyResume
         private SortedList<int, SimpleResumeElement> m_civil = new SortedList<int, SimpleResumeElement>();
         private SortedList<int, ProResumeElement> m_jobs = new SortedList<int, ProResumeElement>();
         private SortedList<int, SkillsResumeElement> m_skills = new SortedList<int, SkillsResumeElement>();
-        private SortedList<int, SimpleResumeElement> m_learning = new SortedList<int, SimpleResumeElement>();
+        private SortedList<int, LearningResumeElement> m_learning = new SortedList<int, LearningResumeElement>();
         private SortedList<int, SimpleResumeElement> m_hobbies = new SortedList<int, SimpleResumeElement>();
         private SortedList<int, SimpleResumeElement> m_languages = new SortedList<int, SimpleResumeElement>();
 
@@ -68,7 +68,7 @@ namespace MyResume
             }
         }
 
-        public SortedList<int, SimpleResumeElement> Learning
+        public SortedList<int, LearningResumeElement> Learning
         {
             get
             {
@@ -202,7 +202,57 @@ namespace MyResume
 
         private void InitLearning()
         {
-           // throw new NotImplementedException();
+
+
+            int v_index = 1;
+            Learning.Add(v_index++, new LearningResumeElement{
+                     Description = "Techniques avancées en C#",
+                     Year = 2016,
+                     Firm = "(Interne)"
+                });
+
+            Learning.Add(v_index++, new LearningResumeElement{
+                     Description = "Introduction au Cloud Azure",
+                     Year = 2016,
+                     Firm = "(Interne)"
+                });
+
+            Learning.Add(v_index++, new LearningResumeElement{
+                     Description = "Optimisation Oracle",
+                     Year = 2015,
+                     Firm = "ORSYS"
+                });
+
+             Learning.Add(v_index++, new LearningResumeElement{
+                     Description = "SCRUM",
+                     Year = 2015,
+                     Firm = "Cegos"
+                });
+
+            Learning.Add(v_index++, new LearningResumeElement{
+                     Description = "C# 5.0 / VS 2012",
+                     Year = 2014,
+                     Firm = "ORSYS"
+                });
+
+            Learning.Add(v_index++, new LearningResumeElement{
+                     Description = "Test Driven Development en .NET",
+                     Year = 2014,
+                     Firm = "ORSYS"
+                });
+
+            Learning.Add(v_index++, new LearningResumeElement{
+                     Description = "Optimisation SQL Server",
+                     Year = 2013,
+                     Firm = "Learning Tree"
+                });
+
+            Learning.Add(v_index++, new LearningResumeElement{
+                     Description = "ASP.NET",
+                     Year = 2013,
+                     Firm = "Learning Tree"
+                });
+
         }
 
         private void InitTechSkills()
