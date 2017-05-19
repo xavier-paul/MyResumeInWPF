@@ -1,0 +1,308 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Speech.Synthesis;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace MyResume
+{
+    public class Resume
+    {
+        private SortedList<int, SimpleResumeElement> m_civil = new SortedList<int, SimpleResumeElement>();
+        private SortedList<int, ProResumeElement> m_jobs = new SortedList<int, ProResumeElement>();
+        private SortedList<int, SkillsResumeElement> m_skills = new SortedList<int, SkillsResumeElement>();
+        private SortedList<int, SimpleResumeElement> m_learning = new SortedList<int, SimpleResumeElement>();
+        private SortedList<int, SimpleResumeElement> m_hobbies = new SortedList<int, SimpleResumeElement>();
+        private SortedList<int, SimpleResumeElement> m_languages = new SortedList<int, SimpleResumeElement>();
+
+        public SortedList<int, SimpleResumeElement> Civil
+        {
+            get
+            {
+                return m_civil;
+            }
+
+            private set
+            {
+                this.m_civil = value;
+            }
+        }
+
+        public SortedList<int, ProResumeElement> Jobs
+        {
+            get
+            {
+                return m_jobs;
+            }
+
+            private set
+            {
+                this.m_jobs = value;
+            }
+        }
+
+        public SortedList<int, SkillsResumeElement> Skills
+        {
+            get
+            {
+                return m_skills;
+            }
+
+            private set
+            {
+                this.m_skills = value;
+            }
+        }
+
+        public SortedList<int, SimpleResumeElement> Hobbies
+        {
+            get
+            {
+                return m_hobbies;
+            }
+
+            private set
+            {
+                this.m_hobbies = value;
+            }
+        }
+
+        public SortedList<int, SimpleResumeElement> Learning
+        {
+            get
+            {
+                return m_learning;
+            }
+
+            private set
+            {
+                this.m_learning = value;
+            }
+        }
+
+        public SortedList<int, SimpleResumeElement> Languages
+        {
+            get
+            {
+                return m_languages;
+            }
+
+            private set
+            {
+                this.m_languages = value;
+            }
+        }
+
+        public Resume()
+        {
+            Speak();
+            Init();
+        }
+
+        public bool CheckVoiceAvailability(SpeechSynthesizer p_speaker, string p_voice)
+        {
+            foreach (InstalledVoice unevoix in p_speaker.GetInstalledVoices()) // Je liste les voix installées
+            {
+                if (unevoix.VoiceInfo.Name == p_voice)
+                    return true; 
+            }
+            return false;
+        }
+
+        private void Speak()
+        {
+            //https://openclassrooms.com/courses/faites-parler-vos-applications-en-net
+            SpeechSynthesizer v_speechSynthesizer = new SpeechSynthesizer();
+           
+            string v_voice = "ScanSoft Virginie_Dri40_16kHz";
+            if (CheckVoiceAvailability(v_speechSynthesizer, v_voice)) // Si la voix est installée
+                v_speechSynthesizer.SelectVoice(v_voice); // Alors on l'utilise
+            else
+                 v_speechSynthesizer.SelectVoiceByHints(VoiceGender.Female);
+
+            PromptBuilder promptBuilder = new PromptBuilder();
+            PromptStyle promptStyle = new PromptStyle();
+            promptStyle.Volume = PromptVolume.Loud;
+            promptStyle.Rate = PromptRate.Slow;
+            promptBuilder.StartStyle(promptStyle);
+
+            promptBuilder.AppendText("Data loading, please wait !", PromptEmphasis.Strong);
+            promptBuilder.EndStyle();
+
+            v_speechSynthesizer.SpeakAsync(promptBuilder);
+        }
+
+        private void Init()
+        {
+            InitCivil();
+            InitPro();
+            InitHobbies();
+            InitLearning();
+            InitTechSkills();
+            InitLanguages();
+        }
+
+        private void InitLanguages()
+        {
+            int v_index = 1;
+            Languages.Add(v_index++, new SimpleResumeElement{
+                     Description = "Français : langue maternelle"
+                });
+
+            Languages.Add(v_index++, new SimpleResumeElement{
+                     Description = "Anglais : courant"
+                });
+
+            Languages.Add(v_index++, new SimpleResumeElement{
+                     Description = "Japonais : Débutant (JLPT N5 obtenu en 2014) : lu, écrit, parlé"
+                });
+        }
+
+        private void InitCivil()
+        {
+            int v_index = 1;
+            Civil.Add(v_index++, new SimpleResumeElement{
+                     Description = "H1 rue des marronniers" + Environment.NewLine + "77177 Brou sur Chantereine",
+                     IconForElement = "Mail.png"
+                });
+
+            Civil.Add(v_index++, new SimpleResumeElement{
+                     Description = "+33614492004",
+                     IconForElement = "GSM.png"
+                });
+
+            Civil.Add(v_index++, new SimpleResumeElement{
+                     Description = "xavpaul@hotmail.com",
+                     IconForElement = "Chat.png"
+                });
+        }
+
+        private void InitPro()
+        {
+            //throw new NotImplementedException();
+        }
+
+        private void InitHobbies()
+        {
+            int i = 1;
+            AddHobby(i++, "Natation");
+            AddHobby(i++, "Running");
+            AddHobby(i++, "Piano");
+            AddHobby(i++, "Langues étrangères");
+            AddHobby(i++, "Voyages (Nigéria (1 an), Bahreïn (1 an), Japon (6 fois), Etats-Unis...)");
+        }
+
+        private void AddHobby(int p_index, string p_hobby)
+        {
+            Hobbies.Add(p_index, new SimpleResumeElement{
+                     Description = p_hobby
+                });
+        }
+
+        private void InitLearning()
+        {
+           // throw new NotImplementedException();
+        }
+
+        private void InitTechSkills()
+        {
+            int v_index = 1;
+            #region Languages
+            Skills.Add(v_index++, new SkillsResumeElement{
+                     Description = "C#",
+                     Level = 5,
+                     Group = SkillsResumeElement.Category.Langage
+                });
+
+             Skills.Add(v_index++, new SkillsResumeElement{
+                     Description = "Azure (Cloud)",
+                     Level = 1,
+                     Group = SkillsResumeElement.Category.Langage
+                });
+
+             Skills.Add(v_index++, new SkillsResumeElement{
+                     Description = "T-SQL (SQL Server)",
+                     Level = 5,
+                     Group = SkillsResumeElement.Category.Langage
+                });
+
+            Skills.Add(v_index++, new SkillsResumeElement{
+                     Description = "PL-SQL (Oracle)",
+                     Level = 5,
+                     Group = SkillsResumeElement.Category.Langage
+                });
+
+             Skills.Add(v_index++, new SkillsResumeElement{
+                     Description = "Java",
+                     Level = 2,
+                     Group = SkillsResumeElement.Category.Langage
+                });
+
+            Skills.Add(v_index++, new SkillsResumeElement{
+                     Description = "C / C++",
+                     Level = 2,
+                     Group = SkillsResumeElement.Category.Langage
+                });
+            #endregion
+
+            #region Methods
+            Skills.Add(v_index++, new SkillsResumeElement{
+                     Description = "Merise",
+                     Level = 4,
+                     Group = SkillsResumeElement.Category.Méthode
+                });
+
+            Skills.Add(v_index++, new SkillsResumeElement{
+                     Description = "UML",
+                     Level = 3,
+                     Group = SkillsResumeElement.Category.Méthode
+                });
+
+            Skills.Add(v_index++, new SkillsResumeElement{
+                     Description = "Agile / SCRUM",
+                     Level = 2,
+                     Group = SkillsResumeElement.Category.Méthode
+                });
+
+            Skills.Add(v_index++, new SkillsResumeElement{
+                     Description = "TDD",
+                     Level = 2,
+                     Group = SkillsResumeElement.Category.Méthode
+                });
+            #endregion
+
+            #region Tools
+            Skills.Add(v_index++, new SkillsResumeElement{
+                     Description = "Visual Studio 2015",
+                     Level = 5,
+                     Group = SkillsResumeElement.Category.Outil
+                });
+
+             Skills.Add(v_index++, new SkillsResumeElement{
+                     Description = "TFS",
+                     Level = 5,
+                     Group = SkillsResumeElement.Category.Outil
+                });
+
+             Skills.Add(v_index++, new SkillsResumeElement{
+                     Description = "VSS",
+                     Level = 5,
+                     Group = SkillsResumeElement.Category.Outil
+                });
+
+             Skills.Add(v_index++, new SkillsResumeElement{
+                     Description = "Power AMC 15",
+                     Level = 4,
+                     Group = SkillsResumeElement.Category.Outil
+                });
+
+             Skills.Add(v_index++, new SkillsResumeElement{
+                     Description = "Android Studio",
+                     Level = 2,
+                     Group = SkillsResumeElement.Category.Outil
+                });
+            #endregion
+        }
+    }
+}
