@@ -10,6 +10,7 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Media.Media3D;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
@@ -40,7 +41,8 @@ namespace MyResume
             m_languagesList.ItemsSource = v_myResume.Languages;
 
             m_trainingList.ItemsSource = v_myResume.Learning;
+            m_jobsList.ItemsSource = v_myResume.Jobs;
+            m_managerSkillsList.ItemsSource = v_myResume.ManagerSkills;
         }
-       
     }
 }

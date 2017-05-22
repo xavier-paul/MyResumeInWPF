@@ -9,6 +9,31 @@
     <Window.Effect>
         <DropShadowEffect/>
     </Window.Effect>
+   <!-- <Window.Resources>
+        <Storyboard x:Key="RotateStoryboard">
+            <Rotation3DAnimationUsingKeyFrames
+         BeginTime="00:00:00" RepeatBehavior="Forever"
+         Storyboard.TargetName="CubeModel"
+         Storyboard.TargetProperty="(Model3D.Transform).(Transform3DGroup.Children)[0].(RotateTransform3D.Rotation)">
+           //Storyboard.TargetProperty="CubeToRotate.Rotation"> 
+                <SplineRotation3DKeyFrame KeyTime="00:00:02">
+                    <SplineRotation3DKeyFrame.Value>
+                        <AxisAngleRotation3D Angle="180" Axis="0,1,0"/>
+                    </SplineRotation3DKeyFrame.Value>
+                </SplineRotation3DKeyFrame>
+                <SplineRotation3DKeyFrame KeyTime="00:00:04">
+                    <SplineRotation3DKeyFrame.Value>
+                        <AxisAngleRotation3D Angle="359" Axis="0,1,0"/>
+                    </SplineRotation3DKeyFrame.Value>
+                </SplineRotation3DKeyFrame>
+            </Rotation3DAnimationUsingKeyFrames>
+        </Storyboard>
+    </Window.Resources>
+    <Window.Triggers>
+        <EventTrigger RoutedEvent="FrameworkElement.Loaded">
+            <BeginStoryboard Storyboard="{StaticResource RotateStoryboard}"/>
+        </EventTrigger>
+    </Window.Triggers>-->
     <Grid>
         <Grid>
             <TabControl Margin="0,0,0,0">
@@ -38,6 +63,94 @@
                             <TextBlock Text="Parcours profesionnel" Foreground="Red" />
                         </StackPanel>
                     </TabItem.Header>
+                    <Grid>
+                    <ListView Margin="10" Name="m_jobsList">
+                            <!-- https://stackoverflow.com/questions/687660/3d-elements-as-items-in-a-wpf-listbox -->
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <WrapPanel>
+                                    <Image Source="{Binding Value.IconForElement}" Width="24" Height="24" Margin="2" />
+                                    <TextBlock Text="{Binding Value.FirmName}" FontWeight="Bold"/>
+                                    <TextBlock Text="{Binding Value.Description}" FontWeight="Bold" Foreground="BlueViolet"/>
+                                        <Grid Height="50" Width="50">
+                                            <Viewport3D Margin="1,1,1,1" Grid.Row="0" Grid.Column="0">
+                                                <ModelVisual3D>
+                                                    <ModelVisual3D.Content>
+                                                        <Model3DGroup x:Name="CubeModel">
+                                                            <Model3DGroup.Transform>
+                                                                <Transform3DGroup>
+                                                                    <RotateTransform3D x:Name="CubeToRotate" />
+                                                                </Transform3DGroup>
+                                                            </Model3DGroup.Transform>
+                                                            <!-- Lights -->
+                                                            <AmbientLight Color="Gray" />
+                                                            <DirectionalLight Color="Gray" Direction="1,-2,-3" />
+                                                            <DirectionalLight Color="Gray" Direction="-1,2,3" />
+
+                                                            <GeometryModel3D>
+                                                                <GeometryModel3D.Geometry>
+                                                                    <!-- Cube -->
+                                                                    <MeshGeometry3D                                                    
+                                    Positions="-1,-1,-1   1,-1,-1   1,-1, 1  -1,-1, 1
+                                               -1,-1, 1   1,-1, 1   1, 1, 1  -1, 1, 1
+                                                1,-1, 1   1,-1,-1   1, 1,-1   1, 1, 1
+                                                1, 1, 1   1, 1,-1  -1, 1,-1  -1, 1, 1
+                                               -1,-1, 1  -1, 1, 1  -1, 1,-1  -1,-1,-1 
+                                               -1,-1,-1  -1, 1,-1   1, 1,-1   1,-1,-1"
+                                    TriangleIndices="0  1  2     2  3  0
+                                                    4  5  6     6  7  4
+                                                    8  9 10    10 11  8
+                                                   12 13 14    14 15 12
+                                                   16 17 18    18 19 16
+                                                   20 21 22    22 23 20" />
+                                                                </GeometryModel3D.Geometry>
+
+                                                                <GeometryModel3D.Material>
+                                                                    <DiffuseMaterial x:Name="matDiffuseMain">
+                                                                        <DiffuseMaterial.Brush>
+                                                                            <SolidColorBrush Color="LimeGreen"/>
+                                                                        </DiffuseMaterial.Brush>
+                                                                    </DiffuseMaterial>
+                                                                </GeometryModel3D.Material>
+                                                            </GeometryModel3D>
+                                                        </Model3DGroup>
+                                                    </ModelVisual3D.Content>
+                                                </ModelVisual3D>
+
+                                                <Viewport3D.Camera>
+                                                    <PerspectiveCamera 
+                  Position = "1.5, 2, 3"
+                  LookDirection = "-1.5, -2, -3"
+                  UpDirection = "0, 1, 0"
+                  FieldOfView = "60">
+                                                        <PerspectiveCamera.Transform>
+                                                            <Transform3DGroup>
+                                                                <RotateTransform3D>
+                                                                    <RotateTransform3D.Rotation>
+                                                                        <AxisAngleRotation3D
+                                      Axis="0 1 0" 
+                                      Angle="{Binding ElementName=hscroll, Path=Value}" />
+                                                                    </RotateTransform3D.Rotation>
+                                                                </RotateTransform3D>
+                                                                <RotateTransform3D>
+                                                                    <RotateTransform3D.Rotation>
+                                                                        <AxisAngleRotation3D
+                                      Axis="1 0 0" 
+                                      Angle="{Binding ElementName=vscroll, Path=Value}" />
+                                                                    </RotateTransform3D.Rotation>
+                                                                </RotateTransform3D>
+                                                            </Transform3DGroup>
+                                                        </PerspectiveCamera.Transform>
+                                                    </PerspectiveCamera>
+                                                </Viewport3D.Camera>
+                                            </Viewport3D>
+                                        </Grid>
+                                    </WrapPanel>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+
+                    </Grid>
                 </TabItem>
                 <TabItem>
                     <TabItem.Header>
@@ -94,6 +207,16 @@
                             <TextBlock Text="Compétences managériales" Foreground="Green" />
                         </StackPanel>
                     </TabItem.Header>
+
+                    <ListView Margin="10" Name="m_managerSkillsList">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <WrapPanel>
+                                    <TextBlock Text="{Binding Value.Description}" FontWeight="Bold" Foreground="BlueViolet"/>
+                                </WrapPanel>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
                 </TabItem>
                 <TabItem>
                     <TabItem.Header>

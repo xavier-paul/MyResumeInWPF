@@ -11,6 +11,7 @@ namespace MyResume
         private DateTime m_startingDate;
         private DateTime m_endingDate;
         private TimeSpan m_jobLength;
+        private string m_firmName;
 
         public DateTime StartingDate
         {
@@ -43,6 +44,19 @@ namespace MyResume
             get
             {
                 return EndingDate - StartingDate;
+            }
+        }
+
+        public string FirmName
+        {
+            get
+            {
+                return m_firmName;
+            }
+
+            set
+            {
+                this.m_firmName = value;
             }
         }
     }
