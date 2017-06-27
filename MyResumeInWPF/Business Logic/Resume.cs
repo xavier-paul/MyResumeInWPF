@@ -2,10 +2,7 @@
 
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Speech.Synthesis;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MyResume
 {
@@ -118,9 +115,9 @@ namespace MyResume
 
         public bool CheckVoiceAvailability(SpeechSynthesizer p_speaker, string p_voice)
         {
-            foreach (InstalledVoice unevoix in p_speaker.GetInstalledVoices()) // Je liste les voix installées
+            foreach (InstalledVoice v_allVoices in p_speaker.GetInstalledVoices()) // Je liste les voix installées
             {
-                if (unevoix.VoiceInfo.Name == p_voice)
+                if (v_allVoices.VoiceInfo.Name == p_voice)
                     return true;
             }
             return false;
@@ -135,7 +132,7 @@ namespace MyResume
             if (CheckVoiceAvailability(v_speechSynthesizer, v_voice)) // Si la voix est installée
                 v_speechSynthesizer.SelectVoice(v_voice); // Alors on l'utilise
             else
-                v_speechSynthesizer.SelectVoiceByHints(VoiceGender.Female);
+                v_speechSynthesizer.SelectVoiceByHints(VoiceGender.Female, VoiceAge.Adult);
 
             PromptBuilder promptBuilder = new PromptBuilder();
             PromptStyle promptStyle = new PromptStyle();
@@ -143,7 +140,7 @@ namespace MyResume
             promptStyle.Rate = PromptRate.Slow;
             promptBuilder.StartStyle(promptStyle);
 
-            promptBuilder.AppendText("Data loading, please wait !", PromptEmphasis.Strong);
+            promptBuilder.AppendText("Chargement du CV en cours !", PromptEmphasis.Strong);
             promptBuilder.EndStyle();
 
             v_speechSynthesizer.SpeakAsync(promptBuilder);
@@ -264,8 +261,6 @@ namespace MyResume
 
         private void InitLearning()
         {
-
-
             int v_index = 1;
             Learning.Add(v_index++, new LearningResumeElement
             {
