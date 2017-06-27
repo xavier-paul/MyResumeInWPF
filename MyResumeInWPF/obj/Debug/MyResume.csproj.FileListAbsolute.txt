@@ -13,3 +13,18 @@ C:\Users\xpaul\Documents\Visual Studio 2015\Projects\WpfApplication1\MyResumeInW
 C:\Users\xpaul\Documents\Visual Studio 2015\Projects\WpfApplication1\MyResumeInWPF\obj\Debug\MyResume.csproj.GenerateResource.Cache
 C:\Users\xpaul\Documents\Visual Studio 2015\Projects\WpfApplication1\MyResumeInWPF\obj\Debug\MyResume.exe
 C:\Users\xpaul\Documents\Visual Studio 2015\Projects\WpfApplication1\MyResumeInWPF\obj\Debug\MyResume.pdb
+G:\temp\Projets .Net\MyResumeInWPF\MyResumeInWPF\bin\Debug\MyResume.exe.config
+G:\temp\Projets .Net\MyResumeInWPF\MyResumeInWPF\bin\Debug\MyResume.exe
+G:\temp\Projets .Net\MyResumeInWPF\MyResumeInWPF\bin\Debug\MyResume.pdb
+G:\temp\Projets .Net\MyResumeInWPF\MyResumeInWPF\obj\Debug\MyResume.csprojResolveAssemblyReference.cache
+G:\temp\Projets .Net\MyResumeInWPF\MyResumeInWPF\obj\Debug\MainWindow.g.cs
+G:\temp\Projets .Net\MyResumeInWPF\MyResumeInWPF\obj\Debug\App.g.cs
+G:\temp\Projets .Net\MyResumeInWPF\MyResumeInWPF\obj\Debug\MyResume_Content.g.cs
+G:\temp\Projets .Net\MyResumeInWPF\MyResumeInWPF\obj\Debug\MyResume_MarkupCompile.cache
+G:\temp\Projets .Net\MyResumeInWPF\MyResumeInWPF\obj\Debug\MyResume_MarkupCompile.lref
+G:\temp\Projets .Net\MyResumeInWPF\MyResumeInWPF\obj\Debug\MainWindow.baml
+G:\temp\Projets .Net\MyResumeInWPF\MyResumeInWPF\obj\Debug\MyResume.g.resources
+G:\temp\Projets .Net\MyResumeInWPF\MyResumeInWPF\obj\Debug\MyResume.Properties.Resources.resources
+G:\temp\Projets .Net\MyResumeInWPF\MyResumeInWPF\obj\Debug\MyResume.csproj.GenerateResource.Cache
+G:\temp\Projets .Net\MyResumeInWPF\MyResumeInWPF\obj\Debug\MyResume.exe
+G:\temp\Projets .Net\MyResumeInWPF\MyResumeInWPF\obj\Debug\MyResume.pdb

@@ -56,6 +56,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Business Logic\AppLocationFinder.cs" />
     <Compile Include="Business Logic\Entities\LearningResumeElement.cs" />
     <Compile Include="Business Logic\Entities\SkillsResumeElement.cs" />
     <Compile Include="Business Logic\Entities\ProResumeElement.cs" />
@@ -68,6 +69,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Business Logic\InternetConnectivity.cs" />
     <Compile Include="Business Logic\Resume.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -106,6 +108,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="French voice\3-RSSolo4FrenchVirginie.exe" />
+    <Content Include="HomeForGoogleMaps.html" />
     <Resource Include="Logos\jobs.png" />
     <Resource Include="Logos\Mail.png" />
     <Resource Include="Logos\button_ok.png" />

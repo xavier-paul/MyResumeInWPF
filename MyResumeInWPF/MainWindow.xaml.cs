@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -24,6 +25,37 @@ namespace MyResume
         public MainWindow()
         {
             InitializeComponent();
+           
+            FillResume();
+
+            ManageGoogleMaps();
+        }
+
+        private void ManageGoogleMaps()
+        {
+            if (InternetConnectivity.IsConnectedToInternet())
+            {
+                string v_uri = AppLocationFinder.Current + "\\HomeForGoogleMaps.html";
+                //string v_directUri = "https://www.google.com/maps/embed/v1/place?q=H1%20rue%20des%20marronniers%2077177%20Brou%20sur%20Chantereine&key=AIzaSyDjX1aA6DMHg_95iTBFLvXNdJ_X6vA6NGU";
+                m_googleMaps.Loaded += delegate
+                {
+                    try
+                    {
+                        m_googleMaps.Navigate(new Uri(v_uri, UriKind.Absolute));
+                    }
+                    catch (Exception v_ex)
+                    {
+                        MessageBox.Show(v_ex.Message);
+                        return;
+                    }
+                };
+            }
+            else
+                m_googleMaps.Visibility = Visibility.Hidden;
+        }
+
+        private void FillResume()
+        {
             //http://www.wpf-tutorial.com/listview-control/listview-data-binding-item-template/
 
             Resume v_myResume = new Resume();
@@ -34,10 +66,10 @@ namespace MyResume
             m_skillsList.ItemsSource = v_myResume.Skills;
 
             //grouper par Catégorie : http://www.wpf-tutorial.com/listview-control/listview-grouping/
-            CollectionView v_view = (CollectionView) CollectionViewSource.GetDefaultView(m_skillsList.ItemsSource);
+            CollectionView v_view = (CollectionView)CollectionViewSource.GetDefaultView(m_skillsList.ItemsSource);
             PropertyGroupDescription v_groupDescription = new PropertyGroupDescription("Value.Group");
             v_view.GroupDescriptions.Add(v_groupDescription);
-            
+
             m_languagesList.ItemsSource = v_myResume.Languages;
 
             m_trainingList.ItemsSource = v_myResume.Learning;

@@ -5,7 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MyResume"
         mc:Ignorable="d"
-        Title="Mon CV" Height="350" Width="722.273" AllowsTransparency="True" WindowStyle="None" Topmost="True" ResizeMode="CanMinimize" Cursor="Hand" WindowStartupLocation="CenterScreen">
+        Title="Mon CV"  MinHeight="500" MinWidth="600"
+        Height="600" Width="800" 
+        Cursor="Hand" WindowStartupLocation="CenterScreen"
+        Background="LightSteelBlue">
     <Window.Effect>
         <DropShadowEffect/>
     </Window.Effect>
@@ -44,19 +47,26 @@
                             <TextBlock Text="Etat Civil" Foreground="Blue" />
                         </StackPanel>
                     </TabItem.Header>
-                    <ListView Margin="10" Name="m_civilList">
-                        <ListView.ItemTemplate>
-                            <DataTemplate>
-                                <WrapPanel>
-                                    <Image Source="{Binding Value.IconForElement}" Width="24" Height="24" Margin="2" />
-                                    <TextBlock Text="{Binding Value.Description}" FontWeight="Bold" Foreground="BlueViolet"/>
-                                </WrapPanel>
-                            </DataTemplate>
-                        </ListView.ItemTemplate>
-                    </ListView>
-
+                    <Grid>
+                        <StackPanel>
+                            <ListView Margin="10" Name="m_civilList">
+                                <ListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <WrapPanel>
+                                            <Image Source="{Binding Value.IconForElement}" Width="24" Height="24" Margin="2" />
+                                            <TextBlock Text="{Binding Value.Description}" FontWeight="Bold" Foreground="BlueViolet"/>
+                                        </WrapPanel>
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
+                            </ListView>
+                        </StackPanel>
+                        <DockPanel Width="780" Height="350" Margin="0,100,0,0">
+                            <WebBrowser Name="m_googleMaps" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" 
+                                        Margin="2,2,2,2" Width="Auto" Height="Auto" />
+                    </DockPanel>
+                    </Grid>
                 </TabItem>
-                <TabItem Height="23" VerticalAlignment="Top">
+                <TabItem>
                     <TabItem.Header>
                         <StackPanel Orientation="Horizontal">
                             <Image Source="/Logos/jobs.png" Width="24" />
@@ -64,7 +74,8 @@
                         </StackPanel>
                     </TabItem.Header>
                     <Grid>
-                    <ListView Margin="10" Name="m_jobsList">
+                        <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+                            <ListView Margin="10" Name="m_jobsList">
                             <!-- https://stackoverflow.com/questions/687660/3d-elements-as-items-in-a-wpf-listbox -->
                         <ListView.ItemTemplate>
                             <DataTemplate>
@@ -149,7 +160,7 @@
                             </DataTemplate>
                         </ListView.ItemTemplate>
                     </ListView>
-
+                        </ScrollViewer>
                     </Grid>
                 </TabItem>
                 <TabItem>

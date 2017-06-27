@@ -9,6 +9,5 @@
 //------------------------------------------------------------------------------
 
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("french%20voice/3-rssolo4frenchvirginie.exe")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("homeforgooglemaps.html")]
 
 

@@ -33,7 +33,7 @@ namespace MyResume
                 string v_normalPath = Path.Combine(Directory.GetCurrentDirectory(), @"\Logos\" + m_iconForElement);
 
                 if (!File.Exists(v_normalPath))
-                    return @"C:\Users\xpaul\Documents\Visual Studio 2015\Projects\MyResume\MyResume\Logos\" + m_iconForElement;
+                    return @"G:\temp\Projets .Net\MyResumeInWPF\MyResumeInWPF\Logos\" + m_iconForElement;
                 else
                     return v_normalPath;
             }
