@@ -11,13 +11,14 @@ namespace MyResume
     public class SkillsResumeElement : SimpleResumeElement
     {
         private byte m_level;
-        public enum Category {Langage, Outil, Méthode};
+        public enum Category {Langages, Outils, Méthodes, Aucun};
 
-        private Category m_group;
+        private Category m_group = Category.Aucun;
 
         private readonly string TICKS_LANGUAGE = Path.Combine(AppLocationFinder.Current, @"Logos\puces\AQUA.png");
         private readonly string TICKS_TOOLS = Path.Combine(AppLocationFinder.Current, @"Logos\puces\GREEN.png");
         private readonly string TICKS_METHODS = Path.Combine(AppLocationFinder.Current, @"Logos\puces\YELLOW.png");
+        private readonly string TICKS_NONE = Path.Combine(AppLocationFinder.Current, @"Logos\puces\FIRE.png");
 
         public byte Level
         {
@@ -36,12 +37,14 @@ namespace MyResume
         {
             get
             {
-                if (Group == Category.Langage)
+                if (Group == Category.Langages)
                     return TICKS_LANGUAGE;
-                else if (Group == Category.Méthode)
+                else if (Group == Category.Méthodes)
                     return TICKS_METHODS;
-                else
+                else if (Group == Category.Outils)
                     return TICKS_TOOLS;
+                else
+                    return TICKS_NONE;
             }
         }
 

@@ -80,6 +80,7 @@ namespace MyResume
 
                 m_trainingList.ItemsSource = v_myResume.Learning;
                 m_jobsList.ItemsSource = v_myResume.Jobs;
+
                 m_managerSkillsList.ItemsSource = v_myResume.ManagerSkills;
             }
             catch (Exception v_ex)

@@ -123,10 +123,10 @@ namespace MyResume
             SpeechSynthesizer v_speechSynthesizer = new SpeechSynthesizer();
 
             string v_voice = "ScanSoft Virginie_Dri40_16kHz";
-            if (CheckVoiceAvailability(v_speechSynthesizer, v_voice)) // Si la voix est installée
-                v_speechSynthesizer.SelectVoice(v_voice); // Alors on l'utilise
+            if (CheckVoiceAvailability(v_speechSynthesizer, v_voice)) // Si la voix "Virginie" est installée,
+                v_speechSynthesizer.SelectVoice(v_voice); // alors on l'utilise.
             else
-                v_speechSynthesizer.SelectVoiceByHints(VoiceGender.Female, VoiceAge.Adult);
+                v_speechSynthesizer.SelectVoiceByHints(VoiceGender.Female, VoiceAge.Adult); //sinon on prends la voix par défaut.
 
             PromptBuilder promptBuilder = new PromptBuilder();
             PromptStyle promptStyle = new PromptStyle();
@@ -167,7 +167,7 @@ namespace MyResume
             });
             ManagerSkills.Add(v_index++, new SkillsResumeElement
             {
-                Description = "Chiffrage",
+                Description = "Chiffrage (Poker Sizing / T-Shirt sizing)",
                 Level = 3
             });
         }
@@ -317,121 +317,124 @@ namespace MyResume
         private void InitTechSkills()
         {
             int v_index = 1;
+            SkillsResumeElement.Category v_currentCat = SkillsResumeElement.Category.Langages;
             #region Languages
             Skills.Add(v_index++, new SkillsResumeElement
             {
                 Description = "C#",
                 Level = 5,
-                Group = SkillsResumeElement.Category.Langage
+                Group = v_currentCat
             });
 
             Skills.Add(v_index++, new SkillsResumeElement
             {
                 Description = "WPF",
                 Level = 2,
-                Group = SkillsResumeElement.Category.Langage
+                Group = v_currentCat
             });
 
             Skills.Add(v_index++, new SkillsResumeElement
             {
                 Description = "Azure (Cloud)",
                 Level = 1,
-                Group = SkillsResumeElement.Category.Langage
+                Group = v_currentCat
             });
 
             Skills.Add(v_index++, new SkillsResumeElement
             {
-                Description = "T-SQL (SQL Server)",
+                Description = "T-SQL (SQL Server 2000 à 2016)",
                 Level = 5,
-                Group = SkillsResumeElement.Category.Langage
+                Group = v_currentCat
             });
 
             Skills.Add(v_index++, new SkillsResumeElement
             {
-                Description = "PL-SQL (Oracle)",
+                Description = "PL-SQL (Oracle 8 à 12c)",
                 Level = 5,
-                Group = SkillsResumeElement.Category.Langage
+                Group = v_currentCat
             });
 
             Skills.Add(v_index++, new SkillsResumeElement
             {
                 Description = "Java",
                 Level = 2,
-                Group = SkillsResumeElement.Category.Langage
+                Group = v_currentCat
             });
 
             Skills.Add(v_index++, new SkillsResumeElement
             {
                 Description = "C / C++",
                 Level = 2,
-                Group = SkillsResumeElement.Category.Langage
+                Group = v_currentCat
             });
             #endregion
 
             #region Methods
+            v_currentCat = SkillsResumeElement.Category.Méthodes;
             Skills.Add(v_index++, new SkillsResumeElement
             {
                 Description = "Merise",
                 Level = 4,
-                Group = SkillsResumeElement.Category.Méthode
+                Group = v_currentCat
             });
 
             Skills.Add(v_index++, new SkillsResumeElement
             {
                 Description = "UML",
                 Level = 3,
-                Group = SkillsResumeElement.Category.Méthode
+                Group = v_currentCat
             });
 
             Skills.Add(v_index++, new SkillsResumeElement
             {
                 Description = "Agile / SCRUM",
                 Level = 2,
-                Group = SkillsResumeElement.Category.Méthode
+                Group = v_currentCat
             });
 
             Skills.Add(v_index++, new SkillsResumeElement
             {
-                Description = "TDD",
+                Description = "TDD (Test-Driven Development)",
                 Level = 2,
-                Group = SkillsResumeElement.Category.Méthode
+                Group = v_currentCat
             });
             #endregion
 
             #region Tools
+            v_currentCat = SkillsResumeElement.Category.Outils;
             Skills.Add(v_index++, new SkillsResumeElement
             {
-                Description = "Visual Studio 2015",
+                Description = "Visual Studio 2017",
                 Level = 5,
-                Group = SkillsResumeElement.Category.Outil
+                Group = v_currentCat
             });
 
             Skills.Add(v_index++, new SkillsResumeElement
             {
                 Description = "TFS",
                 Level = 5,
-                Group = SkillsResumeElement.Category.Outil
+                Group = v_currentCat
             });
 
             Skills.Add(v_index++, new SkillsResumeElement
             {
                 Description = "VSS",
                 Level = 5,
-                Group = SkillsResumeElement.Category.Outil
+                Group = v_currentCat
             });
 
             Skills.Add(v_index++, new SkillsResumeElement
             {
                 Description = "Power AMC 15",
                 Level = 4,
-                Group = SkillsResumeElement.Category.Outil
+                Group = v_currentCat
             });
 
             Skills.Add(v_index++, new SkillsResumeElement
             {
                 Description = "Android Studio",
                 Level = 2,
-                Group = SkillsResumeElement.Category.Outil
+                Group = v_currentCat
             });
             #endregion
         }
