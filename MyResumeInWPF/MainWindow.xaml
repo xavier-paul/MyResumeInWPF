@@ -63,14 +63,17 @@
                     <Grid>
                         <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
                             <ListView Margin="10" Name="m_jobsList">
-                                <!-- https://stackoverflow.com/questions/687660/3d-elements-as-items-in-a-wpf-listbox -->
                                 <ListView.ItemTemplate>
                                     <DataTemplate>
+                                        <StackPanel Orientation="Vertical">
+                                            <TextBlock Text="{Binding Value.StartingDate}" VerticalAlignment="Center" TextAlignment="Center"></TextBlock>
+                                            <TextBlock Text="{Binding Value.EndingDate}" VerticalAlignment="Center" TextAlignment="Center"></TextBlock>
+                                            <TextBlock Text="{Binding Value.JobLengthInFrench}" VerticalAlignment="Center" TextAlignment="Center"></TextBlock>
                                         <StackPanel>
                                             <WrapPanel>
-                                                <Image Name="FirmLogo" Source="{Binding Value.IconForElement}" Width="Auto" Height="Auto" Margin="2 2 2 2" >
+                                                <Image Name="FirmLogo" Source="{Binding Value.IconForElement}" Width="75" Height="Auto" Margin="2 2 2 2" >
                                                     <Image.RenderTransform>
-                                                        <RotateTransform />
+                                                        <RotateTransform CenterX="30" CenterY="30" />
                                                     </Image.RenderTransform>
                                                     <Image.Triggers>
                                                         <EventTrigger RoutedEvent="Window.Loaded">
@@ -80,16 +83,18 @@
                                                                         Storyboard.TargetName="FirmLogo"
                                                                         Storyboard.TargetProperty="RenderTransform.Angle"
                                                                         AutoReverse="True"
-                                                                        From="0" To="45" Duration="0:0:1.5" RepeatBehavior="Forever" />
+                                                                        
+                                                                        From="-15" To="15" Duration="0:0:1.5" RepeatBehavior="Forever" />
                                                                 </Storyboard>
                                                             </BeginStoryboard>
                                                         </EventTrigger>
                                                     </Image.Triggers>
                                                 </Image>
-                                                <TextBlock Text="{Binding Value.FirmName}" FontWeight="Bold"/>
+                                                <TextBlock Text="{Binding Value.FirmName}" FontWeight="Bold" Margin="5 0 5 0"/>
                                                 <TextBlock Text="{Binding Value.Name}" FontWeight="Bold" Foreground="BlueViolet"/>
                                             </WrapPanel>
                                             <TextBlock Text="{Binding Value.Description}" FontWeight="Light"/>
+                                        </StackPanel>
                                         </StackPanel>
                                     </DataTemplate>
                                 </ListView.ItemTemplate>
@@ -158,7 +163,8 @@
                                     <TextBlock Text="{Binding Value.Year}" FontWeight="Thin" Foreground="BlueViolet"/>
                                     <TextBlock Text="{Binding Value.Name}" FontWeight="Bold" Foreground="BlueViolet" Margin="5 0 5 0"/>
                                     <TextBlock Text="{Binding Value.Description}" FontWeight="Light" Foreground="CornflowerBlue"/>
-                                    <TextBlock Text="{Binding Value.Firm}" FontWeight="Light" Margin="5 0 0 0" Foreground="BlueViolet"/>
+                                    <TextBlock Text="{Binding Value.Firm}" FontWeight="Light" Margin="5 0 5 0" Foreground="BlueViolet"/>
+                                    <TextBlock Text="{Binding Value.DayLengthInFrench}" FontWeight="Light" Foreground="LimeGreen"/>
                                 </WrapPanel>
                             </DataTemplate>
                         </ListView.ItemTemplate>
@@ -229,7 +235,7 @@
                         <ListView.ItemTemplate>
                             <DataTemplate>
                                 <WrapPanel>
-                                    <TextBlock Text="{Binding Value.Description}" FontWeight="Bold" Foreground="BurlyWood"/>
+                                    <TextBlock Text="{Binding Value.Description}" FontWeight="Bold" Foreground="SteelBlue"/>
                                 </WrapPanel>
                             </DataTemplate>
                         </ListView.ItemTemplate>

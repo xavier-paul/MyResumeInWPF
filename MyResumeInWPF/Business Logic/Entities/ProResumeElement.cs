@@ -47,6 +47,18 @@ namespace MyResume
             }
         }
 
+        public string JobLengthInFrench
+        {
+            get
+            {
+                double v_duration = Math.Floor(JobLength.TotalDays / 30);
+                if (v_duration <= 12)
+                    return string.Format("{0} mois", v_duration);
+                else
+                    return string.Format("{0} ans et {1} mois", Math.Floor(v_duration /12), v_duration - Math.Floor(v_duration/12)*12);
+            }
+        }
+
         public string FirmName
         {
             get

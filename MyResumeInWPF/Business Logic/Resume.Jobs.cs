@@ -14,7 +14,7 @@ namespace MyResume
             int v_index = 1;
             Jobs.Add(v_index++, new ProResumeElement
             {
-                Name = "Ingénieur d’études",
+                Name = "Ingénieur d’études Full Stack / Dev Lead",
                 Description = "Rédaction de spécifications et de plans de tests(tests unitaires, tests automatisés sous TFS 2015)."
                             + Environment.NewLine + "Développement d’applications en.Net C# 4.6 (webform (Simulateur de compteur électrique, gestionnaire d’alarmes utilisant AJAX, etc…) et winform (Serveur de fichiers, client FTP, etc…)). Utilisation des MSQueues, de WCF, de LinQ etc…"
                             + Environment.NewLine + "Utilisation des design patterns de la Factory, du Singleton, et du Provider."
@@ -29,8 +29,8 @@ namespace MyResume
             {
                 Name = "Ingénieur d’études",
                 Description= "Ecriture de normes de développement C# et SQL."
-+ Environment.NewLine + "Conception(méthode AGILE avec UML 2.1, Merise(MCD / MPD)) et développement d’applications en.Net 2.0 et SQL Server 2005(winform et webform)."
-+ Environment.NewLine + "Développement d’un micro - framework C# basé sur les Application Block (Enterprise Library) de Microsoft.",
+                                + Environment.NewLine + "Conception(méthode AGILE avec UML 2.1, Merise(MCD / MPD)) et développement d’applications en.Net 2.0 et SQL Server 2005(winform et webform)."
+                                + Environment.NewLine + "Développement d’un micro - framework C# basé sur les Application Block (Enterprise Library) de Microsoft.",
                 IconForElement = @"entreprises\PFG.png",
                 FirmName = "OGF Courtage",
                 StartingDate = new DateTime(2007, 02, 01),
@@ -41,8 +41,8 @@ namespace MyResume
             {
                 Name = "Ingénieur d’études",
                 Description = "Réalisation d’applications (Web et clients lourds) en C# (Framework .net 1.x et 2.0, SQL Server et DB2)."
-+ Environment.NewLine + "Documentation sous PowerPoint pour transfert de compétences(300 slides)."
-+ Environment.NewLine + "Clients : Groupe PPR(Rush Collection, Shopoon, Printemps, Surcouf), Géodis , Auto - Distribution, Nestlé, Fromageries BEL, Comité Olympique…",
+                                + Environment.NewLine + "Documentation sous PowerPoint pour transfert de compétences(300 slides)."
+                                + Environment.NewLine + "Clients : Groupe PPR(Rush Collection, Shopoon, Printemps, Surcouf), Géodis, Auto - Distribution, Nestlé, Fromageries BEL, Comité Olympique…",
                 IconForElement = @"entreprises\business-interactif.png",
                 FirmName = "Business Interactif",
                 StartingDate = new DateTime(2003, 11, 01),
@@ -68,7 +68,7 @@ namespace MyResume
                 IconForElement = @"entreprises\Alstom.png",
                 FirmName = "Alstom Power",
                 StartingDate = new DateTime(2002, 04, 01),
-                EndingDate = new DateTime(2012, 09, 01)
+                EndingDate = new DateTime(2002, 09, 01)
             });
 
             Jobs.Add(v_index++, new ProResumeElement
@@ -83,7 +83,7 @@ namespace MyResume
 
             Jobs.Add(v_index++, new ProResumeElement
             {
-                Name = "d’Job d'été",
+                Name = "Job d'été",
                 Description = "Création d’un logiciel au sein d’une équipe(VBA Excel 97, Reverse Engineering Software).",
                 IconForElement = @"entreprises\Opel-Logo-Blitz.png",
                 FirmName = "Opel France",

@@ -10,7 +10,7 @@ namespace MyResume
     {
         private string m_firm;
         private ushort m_year;
-        private ushort m_dayLength;
+        private ushort? m_dayLength = null;
 
         public string Firm
         {
@@ -38,6 +38,19 @@ namespace MyResume
             }
         }
 
-        public ushort DayLength { get => m_dayLength; set => m_dayLength = value; }
+        public string DayLengthInFrench {
+            get
+            {
+                if (DayLength.HasValue)
+                    return string.Format("{0} jours.", DayLength.Value);
+                else
+                    return string.Empty;
+            }
+
+            private set { }
+
+        }
+
+        public ushort? DayLength { get => m_dayLength; set => m_dayLength = value; }
     }
 }
