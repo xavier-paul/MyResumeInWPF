@@ -70,6 +70,12 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Business Logic\InternetConnectivity.cs" />
+    <Compile Include="Business Logic\Resume.Languages.cs" />
+    <Compile Include="Business Logic\Resume.Jobs.cs" />
+    <Compile Include="Business Logic\Resume.ManagementSkills.cs" />
+    <Compile Include="Business Logic\Resume.Hobbies.cs" />
+    <Compile Include="Business Logic\Resume.Learning.cs" />
+    <Compile Include="Business Logic\Resume.TechSkills.cs" />
     <Compile Include="Business Logic\Resume.cs" />
     <Compile Include="Business Logic\WebBrowserFix.cs" />
     <Compile Include="MainWindow.xaml.cs">

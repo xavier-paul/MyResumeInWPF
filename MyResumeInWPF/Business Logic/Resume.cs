@@ -7,7 +7,7 @@ using System.Linq;
 
 namespace MyResume
 {
-    public class Resume
+    public partial class Resume
     {
         private SortedList<int, SimpleResumeElement> m_civil = new SortedList<int, SimpleResumeElement>();
         private SortedList<int, ProResumeElement> m_jobs = new SortedList<int, ProResumeElement>();
@@ -128,16 +128,16 @@ namespace MyResume
             else
                 v_speechSynthesizer.SelectVoiceByHints(VoiceGender.Female, VoiceAge.Adult); //sinon on prends la voix par défaut.
 
-            PromptBuilder promptBuilder = new PromptBuilder();
-            PromptStyle promptStyle = new PromptStyle();
-            promptStyle.Volume = PromptVolume.Loud;
-            promptStyle.Rate = PromptRate.Slow;
-            promptBuilder.StartStyle(promptStyle);
+            PromptBuilder v_promptBuilder = new PromptBuilder();
+            PromptStyle v_promptStyle = new PromptStyle();
+            v_promptStyle.Volume = PromptVolume.Loud;
+            v_promptStyle.Rate = PromptRate.Slow;
+            v_promptBuilder.StartStyle(v_promptStyle);
 
-            promptBuilder.AppendText("Chargement du CV en cours !", PromptEmphasis.Strong);
-            promptBuilder.EndStyle();
+            v_promptBuilder.AppendText("Chargement du CV en cours !", PromptEmphasis.Strong);
+            v_promptBuilder.EndStyle();
 
-            v_speechSynthesizer.SpeakAsync(promptBuilder);
+            v_speechSynthesizer.SpeakAsync(v_promptBuilder);
         }
 
         private void Init()
@@ -150,46 +150,8 @@ namespace MyResume
             InitLanguages();
             InitManagerSkills();
         }
-
-        private void InitManagerSkills()
-        {
-            int v_index = 1;
-            ManagerSkills.Add(v_index++, new SkillsResumeElement
-            {
-                Description = "Pédagogie explicative",
-                Level = 3
-            });
-
-            ManagerSkills.Add(v_index++, new SkillsResumeElement
-            {
-                Description = "Résolution de problématique",
-                Level = 4
-            });
-            ManagerSkills.Add(v_index++, new SkillsResumeElement
-            {
-                Description = "Chiffrage (Poker Sizing / T-Shirt sizing)",
-                Level = 3
-            });
-        }
-
-        private void InitLanguages()
-        {
-            int v_index = 1;
-            Languages.Add(v_index++, new SimpleResumeElement
-            {
-                Description = "Français : langue maternelle"
-            });
-
-            Languages.Add(v_index++, new SimpleResumeElement
-            {
-                Description = "Anglais : courant"
-            });
-
-            Languages.Add(v_index++, new SimpleResumeElement
-            {
-                Description = "Japonais : Débutant (JLPT N5 obtenu en 2014) : lu, écrit, parlé"
-            });
-        }
+        
+       
 
         private void InitCivil()
         {
@@ -212,268 +174,6 @@ namespace MyResume
                 IconForElement = "Chat.png"
             });
         }
-
-        private void InitPro()
-        {
-            int v_index = 1;
-            Jobs.Add(v_index++, new ProResumeElement
-            {
-                Description = "Developpeur",
-                IconForElement = @"entreprises\Asais.gif",
-                FirmName = "Asaïs",
-                StartingDate = new DateTime(2007, 09, 01),
-                EndingDate = new DateTime(2017, 09, 01)
-            });
-
-            Jobs.Add(v_index++, new ProResumeElement
-            {
-                Description = "Developpeur",
-                IconForElement = @"entreprises\PFG.png",
-                FirmName = "OGF Courtage",
-                StartingDate = new DateTime(2007, 02, 01),
-                EndingDate = new DateTime(2007, 06, 01)
-            });
-        }
-
-        private void InitHobbies()
-        {
-            int i = 1;
-            AddHobby(i++, "Natation");
-            AddHobby(i++, "Running");
-            AddHobby(i++, "Piano");
-            AddHobby(i++, "Langues étrangères");
-            AddHobby(i++, "Voyages (Nigéria (1 an), Bahreïn (1 an), Japon (6 fois), Etats-Unis...)");
-        }
-
-        private void AddHobby(int p_index, string p_hobby)
-        {
-            Hobbies.Add(p_index, new SimpleResumeElement
-            {
-                Description = p_hobby
-            });
-        }
-
-        private void InitLearning()
-        {
-            int v_index = 1;
-
-
-            Learning.Add(v_index++, new LearningResumeElement
-            {
-                Name = "Angular (npm, NodeJS, Gulp, etc...)",
-                Year = 2017,
-                Firm = "(Auto formation)"
-            });
-
-            Learning.Add(v_index++, new LearningResumeElement
-            {
-                Name = "JQuery",
-                Year = 2017,
-                Firm = "(Auto formation)"
-            });
-
-            Learning.Add(v_index++, new LearningResumeElement
-            {
-                Name = "WPF",
-                Year = 2017,
-                Firm = "(Auto formation)"
-            });
-
-            Learning.Add(v_index++, new LearningResumeElement
-            {
-                Name = "Techniques avancées en C#",
-                Description = "(NuGet, Tests, Generics, TPL, Async/Await, Dependency Injection, LinQ, Extension Methods, JSON / REST, PowerShell, Transaction Scope…)",
-                Year = 2016,
-                Firm = "(Interne)",
-                DayLength = 12
-            });
-
-            Learning.Add(v_index++, new LearningResumeElement
-            {
-                Name = "Introduction au Cloud Azure",
-                Description = "Service Fabric, Document DB",
-                Year = 2016,
-                Firm = "(Interne)",
-                DayLength = 2
-            });
-
-            Learning.Add(v_index++, new LearningResumeElement
-            {
-                Name = "Oracle, optimisation d'applications",
-                Year = 2015,
-                Firm = "ORSYS",
-                DayLength = 4
-            });
-
-            Learning.Add(v_index++, new LearningResumeElement
-            {
-                Name = "SCRUM",
-                Description = "Utiliser efficacement la méthode SCRUM",
-                Year = 2015,
-                Firm = "Cegos",
-                DayLength = 5
-            });
-
-            Learning.Add(v_index++, new LearningResumeElement
-            {
-                Name = "C# 5.0 / VS 2012",
-                Description = "mise en oeuvre des nouveautés",
-                Year = 2014,
-                Firm = "ORSYS",
-                DayLength = 5
-            });
-
-            Learning.Add(v_index++, new LearningResumeElement
-            {
-                Name = "Test Driven Development en .NET",
-                Year = 2014,
-                Firm = "ORSYS",
-                DayLength = 3
-            });
-
-            Learning.Add(v_index++, new LearningResumeElement
-            {
-                Name = "Optimisation SQL Server",
-                Description = "Développement de base de données SQL Server hautement performantes",
-                Year = 2013,
-                Firm = "Learning Tree",
-                DayLength = 4
-            });
-
-            Learning.Add(v_index++, new LearningResumeElement
-            {
-                Name = "ASP.NET",
-                Description = "Creations d’applications Web",
-                Year = 2013,
-                Firm = "Learning Tree",
-                DayLength = 4
-            });
-
-        }
-
-        private void InitTechSkills()
-        {
-            int v_index = 1;
-            SkillsResumeElement.Category v_currentCat = SkillsResumeElement.Category.Langages;
-            #region Languages
-            Skills.Add(v_index++, new SkillsResumeElement
-            {
-                Description = "C#",
-                Level = 5,
-                Group = v_currentCat
-            });
-
-            Skills.Add(v_index++, new SkillsResumeElement
-            {
-                Description = "WPF",
-                Level = 2,
-                Group = v_currentCat
-            });
-
-            Skills.Add(v_index++, new SkillsResumeElement
-            {
-                Description = "Azure (Cloud)",
-                Level = 1,
-                Group = v_currentCat
-            });
-
-            Skills.Add(v_index++, new SkillsResumeElement
-            {
-                Description = "T-SQL (SQL Server 2000 à 2016)",
-                Level = 5,
-                Group = v_currentCat
-            });
-
-            Skills.Add(v_index++, new SkillsResumeElement
-            {
-                Description = "PL-SQL (Oracle 8 à 12c)",
-                Level = 5,
-                Group = v_currentCat
-            });
-
-            Skills.Add(v_index++, new SkillsResumeElement
-            {
-                Description = "Java",
-                Level = 2,
-                Group = v_currentCat
-            });
-
-            Skills.Add(v_index++, new SkillsResumeElement
-            {
-                Description = "C / C++",
-                Level = 2,
-                Group = v_currentCat
-            });
-            #endregion
-
-            #region Methods
-            v_currentCat = SkillsResumeElement.Category.Méthodes;
-            Skills.Add(v_index++, new SkillsResumeElement
-            {
-                Description = "Merise",
-                Level = 4,
-                Group = v_currentCat
-            });
-
-            Skills.Add(v_index++, new SkillsResumeElement
-            {
-                Description = "UML",
-                Level = 3,
-                Group = v_currentCat
-            });
-
-            Skills.Add(v_index++, new SkillsResumeElement
-            {
-                Description = "Agile / SCRUM",
-                Level = 2,
-                Group = v_currentCat
-            });
-
-            Skills.Add(v_index++, new SkillsResumeElement
-            {
-                Description = "TDD (Test-Driven Development)",
-                Level = 2,
-                Group = v_currentCat
-            });
-            #endregion
-
-            #region Tools
-            v_currentCat = SkillsResumeElement.Category.Outils;
-            Skills.Add(v_index++, new SkillsResumeElement
-            {
-                Description = "Visual Studio 2017",
-                Level = 5,
-                Group = v_currentCat
-            });
-
-            Skills.Add(v_index++, new SkillsResumeElement
-            {
-                Description = "TFS",
-                Level = 5,
-                Group = v_currentCat
-            });
-
-            Skills.Add(v_index++, new SkillsResumeElement
-            {
-                Description = "VSS",
-                Level = 5,
-                Group = v_currentCat
-            });
-
-            Skills.Add(v_index++, new SkillsResumeElement
-            {
-                Description = "Power AMC 15",
-                Level = 4,
-                Group = v_currentCat
-            });
-
-            Skills.Add(v_index++, new SkillsResumeElement
-            {
-                Description = "Android Studio",
-                Level = 2,
-                Group = v_currentCat
-            });
-            #endregion
-        }
+                  
     }
 }
