@@ -186,7 +186,26 @@
                         <ListView.View>
                             <GridView>
                                 <GridViewColumn Header="Nom" Width="300" DisplayMemberBinding="{Binding Value.Description}" />
-                                <GridViewColumn Header="Niveau" Width="80" DisplayMemberBinding="{Binding Value.Level}" />
+
+                                <GridViewColumn Header="Niveau">
+                                    <GridViewColumn.CellTemplate>
+                                        <DataTemplate >
+                                            <ItemsControl ItemsSource="{Binding Value.AllImagesLevel}">
+                                                <ItemsControl.ItemsPanel>
+                                                    <ItemsPanelTemplate>
+                                                        <StackPanel Orientation="Horizontal" />
+                                                    </ItemsPanelTemplate>
+                                                </ItemsControl.ItemsPanel>
+
+                                                <ItemsControl.ItemTemplate>
+                                                    <DataTemplate>
+                                                        <Image Source="{Binding}" Width="24" Height="24"></Image>
+                                                    </DataTemplate>
+                                                </ItemsControl.ItemTemplate>
+                                            </ItemsControl>
+                                        </DataTemplate>
+                                    </GridViewColumn.CellTemplate>
+                                </GridViewColumn>
                             </GridView>
                         </ListView.View>
 
