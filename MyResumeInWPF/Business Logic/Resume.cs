@@ -150,8 +150,7 @@ namespace MyResume
             InitLanguages();
             InitManagerSkills();
         }
-        
-       
+             
 
         private void InitCivil()
         {
