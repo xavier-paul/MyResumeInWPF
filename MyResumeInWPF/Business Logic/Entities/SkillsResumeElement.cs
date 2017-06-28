@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,7 +15,9 @@ namespace MyResume
 
         private Category m_group;
 
-        private const string TICKS = @"G:\temp\Projets .Net\MyResumeInWPF\MyResumeInWPF\Logos\puces\AQUA.png";
+        private readonly string TICKS_LANGUAGE = Path.Combine(AppLocationFinder.Current, @"Logos\puces\AQUA.png");
+        private readonly string TICKS_TOOLS = Path.Combine(AppLocationFinder.Current, @"Logos\puces\GREEN.png");
+        private readonly string TICKS_METHODS = Path.Combine(AppLocationFinder.Current, @"Logos\puces\YELLOW.png");
 
         public byte Level
         {
@@ -26,6 +29,19 @@ namespace MyResume
             set
             {
                 this.m_level = value;
+            }
+        }
+
+        private string TICKS
+        {
+            get
+            {
+                if (Group == Category.Langage)
+                    return TICKS_LANGUAGE;
+                else if (Group == Category.Méthode)
+                    return TICKS_METHODS;
+                else
+                    return TICKS_TOOLS;
             }
         }
 

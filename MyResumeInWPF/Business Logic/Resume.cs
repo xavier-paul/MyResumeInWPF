@@ -17,8 +17,6 @@ namespace MyResume
         private SortedList<int, SimpleResumeElement> m_languages = new SortedList<int, SimpleResumeElement>();
         private SortedList<int, SkillsResumeElement> m_managerSkills = new SortedList<int, SkillsResumeElement>();
 
-        private List<SkillsResumeElement> m_unsortedSkills = new List<SkillsResumeElement>();
-
         public SortedList<int, SimpleResumeElement> Civil
         {
             get
@@ -55,14 +53,6 @@ namespace MyResume
             private set
             {
                 this.m_skills = value;
-            }
-        }
-
-        public IEnumerable<object> GroupedSkills
-        {
-            get
-            {
-                return from x in Skills group x by x.Key into grp orderby grp.Key select grp;
             }
         }
 
@@ -107,18 +97,9 @@ namespace MyResume
 
         public SortedList<int, SkillsResumeElement> ManagerSkills
         {
-            get
-            {
-                return m_managerSkills;
-            }
-
-            set
-            {
-                this.m_managerSkills = value;
-            }
+            get => m_managerSkills;
+            set => this.m_managerSkills = value;
         }
-
-        public List<SkillsResumeElement> UnsortedSkills { get => m_unsortedSkills; set => m_unsortedSkills = value; }
 
         public Resume()
         {
@@ -346,6 +327,13 @@ namespace MyResume
 
             Skills.Add(v_index++, new SkillsResumeElement
             {
+                Description = "WPF",
+                Level = 2,
+                Group = SkillsResumeElement.Category.Langage
+            });
+
+            Skills.Add(v_index++, new SkillsResumeElement
+            {
                 Description = "Azure (Cloud)",
                 Level = 1,
                 Group = SkillsResumeElement.Category.Langage
@@ -446,9 +434,6 @@ namespace MyResume
                 Group = SkillsResumeElement.Category.Outil
             });
             #endregion
-
-            UnsortedSkills.AddRange(Skills.Values);
-
         }
     }
 }
