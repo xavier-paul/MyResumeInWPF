@@ -65,11 +65,25 @@
                             <ListView Margin="10" Name="m_jobsList">
                                 <ListView.ItemTemplate>
                                     <DataTemplate>
-                                        <StackPanel Orientation="Vertical">
+                                        <DockPanel>
+                                           <!-- 
                                             <TextBlock Text="{Binding Value.StartingDate}" VerticalAlignment="Center" TextAlignment="Center"></TextBlock>
                                             <TextBlock Text="{Binding Value.EndingDate}" VerticalAlignment="Center" TextAlignment="Center"></TextBlock>
-                                            <TextBlock Text="{Binding Value.JobLengthInFrench}" VerticalAlignment="Center" TextAlignment="Center"></TextBlock>
-                                        <StackPanel>
+                                       -->
+
+                                            <TextBlock Height="14"
+                                            x:Name="TextBlock1"
+                                                       VerticalAlignment="Center"
+                                                       HorizontalAlignment="Center"
+                                            Text="{Binding Value.JobLengthInFrench}" RenderTransformOrigin="0.5,0.5" >
+                                                <TextBlock.RenderTransform>
+                                                    <TransformGroup>
+                                                        <RotateTransform Angle="-90"/>
+                                                    </TransformGroup>
+                                                </TextBlock.RenderTransform>
+                                            </TextBlock>
+
+                                            <StackPanel>
                                             <WrapPanel>
                                                 <Image Name="FirmLogo" Source="{Binding Value.IconForElement}" Width="75" Height="Auto" Margin="2 2 2 2" >
                                                     <Image.RenderTransform>
@@ -95,7 +109,7 @@
                                             </WrapPanel>
                                             <TextBlock Text="{Binding Value.Description}" FontWeight="Light"/>
                                         </StackPanel>
-                                        </StackPanel>
+                                        </DockPanel>
                                     </DataTemplate>
                                 </ListView.ItemTemplate>
                             </ListView>
