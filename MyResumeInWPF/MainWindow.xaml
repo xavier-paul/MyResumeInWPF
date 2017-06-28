@@ -62,19 +62,15 @@
                     </TabItem.Header>
                     <Grid>
                         <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
-                            <ListView Margin="10" Name="m_jobsList">
+                            <ListView Name="m_jobsList">
                                 <ListView.ItemTemplate>
                                     <DataTemplate>
                                         <DockPanel>
-                                           <!-- 
-                                            <TextBlock Text="{Binding Value.StartingDate}" VerticalAlignment="Center" TextAlignment="Center"></TextBlock>
-                                            <TextBlock Text="{Binding Value.EndingDate}" VerticalAlignment="Center" TextAlignment="Center"></TextBlock>
-                                       -->
-
-                                            <TextBlock Height="14"
-                                            x:Name="TextBlock1"
-                                                       VerticalAlignment="Center"
-                                                       HorizontalAlignment="Center"
+                                            <TextBlock Height="Auto" TextAlignment="Center"
+                                                       FontWeight="Medium"
+                                             Margin="2 2 2 2"
+                                            x:Name="JobLength"
+                                                      
                                             Text="{Binding Value.JobLengthInFrench}" RenderTransformOrigin="0.5,0.5" >
                                                 <TextBlock.RenderTransform>
                                                     <TransformGroup>
@@ -97,7 +93,6 @@
                                                                         Storyboard.TargetName="FirmLogo"
                                                                         Storyboard.TargetProperty="RenderTransform.Angle"
                                                                         AutoReverse="True"
-                                                                        
                                                                         From="-15" To="15" Duration="0:0:1.5" RepeatBehavior="Forever" />
                                                                 </Storyboard>
                                                             </BeginStoryboard>
@@ -107,7 +102,7 @@
                                                 <TextBlock Text="{Binding Value.FirmName}" FontWeight="Bold" Margin="5 0 5 0"/>
                                                 <TextBlock Text="{Binding Value.Name}" FontWeight="Bold" Foreground="BlueViolet"/>
                                             </WrapPanel>
-                                            <TextBlock Text="{Binding Value.Description}" FontWeight="Light"/>
+                                            <TextBlock MinHeight="86" Text="{Binding Value.Description}" FontWeight="Light"/>
                                         </StackPanel>
                                         </DockPanel>
                                     </DataTemplate>

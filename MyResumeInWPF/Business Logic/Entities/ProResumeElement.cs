@@ -53,9 +53,10 @@ namespace MyResume
             {
                 double v_duration = Math.Floor(JobLength.TotalDays / 30);
                 if (v_duration <= 12)
-                    return string.Format("{0} mois", v_duration);
+                    return string.Format("{1:MM/yyyy} -> {2:MM/yyyy}{3}{0} mois", v_duration, StartingDate, EndingDate, Environment.NewLine);
                 else
-                    return string.Format("{0} ans et {1} mois", Math.Floor(v_duration /12), v_duration - Math.Floor(v_duration/12)*12);
+                    return string.Format("{2:MM/yyyy} -> {3:MM/yyyy}{4}{0} ans et {1} mois", Math.Floor(v_duration /12), v_duration - Math.Floor(v_duration/12)*12,
+                        StartingDate, EndingDate, Environment.NewLine);
             }
         }
 
