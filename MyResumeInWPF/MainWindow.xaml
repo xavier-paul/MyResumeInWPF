@@ -234,8 +234,9 @@
                             <DataTemplate>
                                 <WrapPanel>
                                     <TextBlock Text="{Binding Value.Year}" FontWeight="Thin" Foreground="BlueViolet"/>
-                                    <TextBlock Text="{Binding Value.Description}" FontWeight="Bold" Foreground="BlueViolet"/>
-                                    <TextBlock Text="{Binding Value.Firm}" FontWeight="Light" Foreground="BlueViolet"/>
+                                    <TextBlock Text="{Binding Value.Name}" FontWeight="Bold" Foreground="BlueViolet" Margin="5 0 5 0"/>
+                                    <TextBlock Text="{Binding Value.Description}" FontWeight="Light" Foreground="CornflowerBlue"/>
+                                    <TextBlock Text="{Binding Value.Firm}" FontWeight="Light" Margin="5 0 0 0" Foreground="BlueViolet"/>
                                 </WrapPanel>
                             </DataTemplate>
                         </ListView.ItemTemplate>
@@ -306,7 +307,7 @@
                         <ListView.ItemTemplate>
                             <DataTemplate>
                                 <WrapPanel>
-                                    <TextBlock Text="{Binding Value.Description}" FontWeight="Bold" Foreground="Aquamarine"/>
+                                    <TextBlock Text="{Binding Value.Description}" FontWeight="Bold" Foreground="BurlyWood"/>
                                 </WrapPanel>
                             </DataTemplate>
                         </ListView.ItemTemplate>

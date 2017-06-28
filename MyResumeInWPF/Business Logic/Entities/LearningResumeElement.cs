@@ -10,6 +10,7 @@ namespace MyResume
     {
         private string m_firm;
         private ushort m_year;
+        private ushort m_dayLength;
 
         public string Firm
         {
@@ -36,5 +37,7 @@ namespace MyResume
                 this.m_year = value;
             }
         }
+
+        public ushort DayLength { get => m_dayLength; set => m_dayLength = value; }
     }
 }

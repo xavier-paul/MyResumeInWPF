@@ -12,6 +12,7 @@ namespace MyResume
     {
         private string m_description;
         private string m_iconForElement;
+        private string m_name;
 
         public string Description
         {
@@ -30,7 +31,7 @@ namespace MyResume
         {
             get
             {
-                string v_normalPath = Path.Combine(Directory.GetCurrentDirectory(), @"\Logos\" + m_iconForElement);
+                string v_normalPath = Path.Combine(Directory.GetCurrentDirectory(), @"Logos\" + m_iconForElement);
 
                 if (!File.Exists(v_normalPath))
                     return @"G:\temp\Projets .Net\MyResumeInWPF\MyResumeInWPF\Logos\" + m_iconForElement;
@@ -43,5 +44,7 @@ namespace MyResume
                 this.m_iconForElement = value;
             }
         }
+
+        public string Name { get => m_name; set => m_name = value; }
     }
 }
