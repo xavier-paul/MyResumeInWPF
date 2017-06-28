@@ -183,19 +183,18 @@
                         </StackPanel>
                     </TabItem.Header>
                     <ListView Margin="10" Name="m_skillsList">
-                        <ListView.ItemTemplate>
-                            <DataTemplate>
-                                <WrapPanel>
-                                    <TextBlock Text="{Binding Value.Description}" FontWeight="Medium" Foreground="DarkBlue"/>
-                                </WrapPanel>
-                            </DataTemplate>
-                        </ListView.ItemTemplate>
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Header="Nom" Width="300" DisplayMemberBinding="{Binding Value.Description}" />
+                                <GridViewColumn Header="Niveau" Width="80" DisplayMemberBinding="{Binding Value.Level}" />
+                            </GridView>
+                        </ListView.View>
 
                         <ListView.GroupStyle>
                             <GroupStyle>
                                 <GroupStyle.HeaderTemplate>
                                     <DataTemplate>
-                                        <TextBlock FontWeight="Bold" Text="{Binding Value.Group}"/>
+                                        <TextBlock FontSize="15" FontWeight="Bold" Text="{Binding Name}"/>
                                     </DataTemplate>
                                 </GroupStyle.HeaderTemplate>
                             </GroupStyle>

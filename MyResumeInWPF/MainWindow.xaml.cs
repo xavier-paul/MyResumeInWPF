@@ -59,22 +59,31 @@ namespace MyResume
             //http://www.wpf-tutorial.com/listview-control/listview-data-binding-item-template/
 
             Resume v_myResume = new Resume();
-            m_civilList.ItemsSource = v_myResume.Civil;
-            m_hobbiesList.ItemsSource = v_myResume.Hobbies;
+            try
+            {
+                m_civilList.ItemsSource = v_myResume.Civil;
+                m_hobbiesList.ItemsSource = v_myResume.Hobbies;
 
-            //Skills : Telerik radar ?
-            m_skillsList.ItemsSource = v_myResume.Skills;
+                //Skills : Telerik radar ?
+                m_skillsList.ItemsSource = v_myResume.Skills;
 
-            //grouper par Catégorie : http://www.wpf-tutorial.com/listview-control/listview-grouping/
-            CollectionView v_view = (CollectionView)CollectionViewSource.GetDefaultView(m_skillsList.ItemsSource);
-            PropertyGroupDescription v_groupDescription = new PropertyGroupDescription("Value.Group");
-            v_view.GroupDescriptions.Add(v_groupDescription);
+                //grouper par Catégorie : http://www.wpf-tutorial.com/listview-control/listview-grouping/
+                //https://stackoverflow.com/questions/37657968/grouping-of-items-in-listview-wpf
+                CollectionView v_view = (CollectionView)CollectionViewSource.GetDefaultView(m_skillsList.ItemsSource);
+                PropertyGroupDescription v_groupDescription = new PropertyGroupDescription("Value.Group");
+                v_view.GroupDescriptions.Add(v_groupDescription);
+               
+                m_languagesList.ItemsSource = v_myResume.Languages;
 
-            m_languagesList.ItemsSource = v_myResume.Languages;
-
-            m_trainingList.ItemsSource = v_myResume.Learning;
-            m_jobsList.ItemsSource = v_myResume.Jobs;
-            m_managerSkillsList.ItemsSource = v_myResume.ManagerSkills;
+                m_trainingList.ItemsSource = v_myResume.Learning;
+                m_jobsList.ItemsSource = v_myResume.Jobs;
+                m_managerSkillsList.ItemsSource = v_myResume.ManagerSkills;
+            }
+            catch (Exception v_ex)
+            {
+                MessageBox.Show(v_ex.Message);
+            }
         }
+
     }
 }

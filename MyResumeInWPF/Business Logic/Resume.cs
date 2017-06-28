@@ -3,6 +3,7 @@
 using System;
 using System.Collections.Generic;
 using System.Speech.Synthesis;
+using System.Linq;
 
 namespace MyResume
 {
@@ -15,6 +16,8 @@ namespace MyResume
         private SortedList<int, SimpleResumeElement> m_hobbies = new SortedList<int, SimpleResumeElement>();
         private SortedList<int, SimpleResumeElement> m_languages = new SortedList<int, SimpleResumeElement>();
         private SortedList<int, SkillsResumeElement> m_managerSkills = new SortedList<int, SkillsResumeElement>();
+
+        private List<SkillsResumeElement> m_unsortedSkills = new List<SkillsResumeElement>();
 
         public SortedList<int, SimpleResumeElement> Civil
         {
@@ -52,6 +55,14 @@ namespace MyResume
             private set
             {
                 this.m_skills = value;
+            }
+        }
+
+        public IEnumerable<object> GroupedSkills
+        {
+            get
+            {
+                return from x in Skills group x by x.Key into grp orderby grp.Key select grp;
             }
         }
 
@@ -106,6 +117,8 @@ namespace MyResume
                 this.m_managerSkills = value;
             }
         }
+
+        public List<SkillsResumeElement> UnsortedSkills { get => m_unsortedSkills; set => m_unsortedSkills = value; }
 
         public Resume()
         {
@@ -433,6 +446,9 @@ namespace MyResume
                 Group = SkillsResumeElement.Category.Outil
             });
             #endregion
+
+            UnsortedSkills.AddRange(Skills.Values);
+
         }
     }
 }
