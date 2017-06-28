@@ -71,6 +71,7 @@
     </Compile>
     <Compile Include="Business Logic\InternetConnectivity.cs" />
     <Compile Include="Business Logic\Resume.cs" />
+    <Compile Include="Business Logic\WebBrowserFix.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>

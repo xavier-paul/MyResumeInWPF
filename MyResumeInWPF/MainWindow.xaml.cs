@@ -35,6 +35,9 @@ namespace MyResume
         {
             if (InternetConnectivity.IsConnectedToInternet())
             {
+                //pour supprimer les erreurs Javascripts (dû au Browser WPF qui est en fait un ActiveX)
+                (new MyResume.WebBrowserFix ()).HideScriptErrors(m_googleMaps, true);
+
                 string v_uri = AppLocationFinder.Current + "\\HomeForGoogleMaps.html";
                 //string v_directUri = "https://www.google.com/maps/embed/v1/place?q=H1%20rue%20des%20marronniers%2077177%20Brou%20sur%20Chantereine&key=AIzaSyDjX1aA6DMHg_95iTBFLvXNdJ_X6vA6NGU";
                 m_googleMaps.Loaded += delegate
