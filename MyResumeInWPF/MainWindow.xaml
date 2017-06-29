@@ -17,7 +17,7 @@
                 <TabItem>
                     <TabItem.Header>
                         <StackPanel Orientation="Horizontal">
-                            <Image Source="/Logos/Home.png" Width="24" />
+                            <Image Source="/Logos/Home.png" Width="24" Margin="0 0 4 0"/>
                             <TextBlock Text="Etat Civil" Foreground="Blue" />
                         </StackPanel>
                     </TabItem.Header>
@@ -55,7 +55,7 @@
                 <TabItem>
                     <TabItem.Header>
                         <StackPanel Orientation="Horizontal">
-                            <Image Source="/Logos/jobs.png" Width="24" />
+                            <Image Source="/Logos/jobs.png" Width="24" Margin="0 0 4 0"/>
                             <TextBlock Text="Parcours professionnel" Foreground="Red" />
                         </StackPanel>
                     </TabItem.Header>
@@ -123,7 +123,7 @@
                 <TabItem>
                     <TabItem.Header>
                         <StackPanel Orientation="Horizontal">
-                            <Image Source="/Logos/Education.png" Width="24" />
+                            <Image Source="/Logos/Education.png" Width="24" Margin="0 0 4 0"/>
                             <TextBlock Text="Compétences techniques" Foreground="Green" />
                         </StackPanel>
                     </TabItem.Header>
@@ -169,7 +169,7 @@
                 <TabItem>
                     <TabItem.Header>
                         <StackPanel Orientation="Horizontal">
-                            <Image Source="/Logos/case.png" Width="24" />
+                            <Image Source="/Logos/case.png" Width="24" Margin="0 0 4 0"/>
                             <TextBlock Text="Formation continue" Foreground="BlueViolet" />
                         </StackPanel>
                     </TabItem.Header>
@@ -191,7 +191,7 @@
                 <TabItem>
                     <TabItem.Header>
                         <StackPanel Orientation="Horizontal">
-                            <Image Source="/Logos/Home.png" Width="24" />
+                            <Image Source="/Logos/Home.png" Width="24" Margin="0 0 4 0"/>
                             <TextBlock Text="Compétences managériales" Foreground="DarkGoldenrod" />
                         </StackPanel>
                     </TabItem.Header>
@@ -228,7 +228,7 @@
                 <TabItem>
                     <TabItem.Header>
                         <StackPanel Orientation="Horizontal">
-                            <Image Source="/Logos/Home.png" Width="24" />
+                            <Image Source="/Logos/languages.png" Width="24" Margin="0 0 4 0"/>
                             <TextBlock Text="Langues" Foreground="SaddleBrown" />
                         </StackPanel>
                     </TabItem.Header>
@@ -245,7 +245,7 @@
                 <TabItem>
                     <TabItem.Header>
                         <StackPanel Orientation="Horizontal">
-                            <Image Source="/Logos/Home.png" Width="24" />
+                            <Image Source="/Logos/hobbies.png" Width="24" Margin="0 0 4 0"/>
                             <TextBlock Text="Loisirs" Foreground="SlateBlue" />
                         </StackPanel>
                     </TabItem.Header>

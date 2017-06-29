@@ -116,6 +116,8 @@
   <ItemGroup>
     <Content Include="French voice\3-RSSolo4FrenchVirginie.exe" />
     <Content Include="HomeForGoogleMaps.html" />
+    <Resource Include="Logos\hobbies.png" />
+    <Resource Include="Logos\languages.png" />
     <Resource Include="Logos\jobs.png" />
     <Resource Include="Logos\Mail.png" />
     <Resource Include="Logos\button_ok.png" />
