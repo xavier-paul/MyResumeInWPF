@@ -156,7 +156,7 @@ namespace MyResume
             int v_index = 1;
             Civil.Add(v_index++, new SimpleResumeElement
             {
-                Description = "H1 rue des marronniers" + Environment.NewLine + "77177 Brou sur Chantereine",
+                Description = "46 rue du lys" + Environment.NewLine + "77150 Lésigny",
                 IconForElement = "Mail.png"
             });
 
