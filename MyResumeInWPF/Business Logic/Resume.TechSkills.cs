@@ -1,11 +1,4 @@
-﻿//  AIzaSyDjX1aA6DMHg_95iTBFLvXNdJ_X6vA6NGU 
-
-using System;
-using System.Collections.Generic;
-using System.Speech.Synthesis;
-using System.Linq;
-
-namespace MyResume
+﻿namespace MyResume
 {
     public partial class Resume
     {

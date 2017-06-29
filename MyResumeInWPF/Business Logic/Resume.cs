@@ -3,7 +3,6 @@
 using System;
 using System.Collections.Generic;
 using System.Speech.Synthesis;
-using System.Linq;
 
 namespace MyResume
 {
