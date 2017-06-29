@@ -45,6 +45,16 @@
 
         }
 
-        public ushort? DayLength { get => m_dayLength; set => m_dayLength = value; }
+        public ushort? DayLength {
+            get
+            {
+                return m_dayLength;
+            }
+
+            set
+            {
+                this.m_dayLength = value;
+            }
+        }
     }
 }

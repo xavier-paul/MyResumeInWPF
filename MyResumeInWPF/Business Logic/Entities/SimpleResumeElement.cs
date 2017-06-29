@@ -39,6 +39,16 @@ namespace MyResume
             }
         }
 
-        public string Name { get => m_name; set => m_name = value; }
+        public string Name {
+            get
+            {
+                return m_name;
+            }
+
+            set
+            {
+                this.m_name = value;
+            }
+        }
     }
 }

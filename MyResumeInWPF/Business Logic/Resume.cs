@@ -96,8 +96,15 @@ namespace MyResume
 
         public SortedList<int, SkillsResumeElement> ManagerSkills
         {
-            get => m_managerSkills;
-            set => this.m_managerSkills = value;
+            get
+            {
+                return m_managerSkills;
+            }
+
+            set
+            {
+                this.m_managerSkills = value;
+            }
         }
 
         public Resume()
