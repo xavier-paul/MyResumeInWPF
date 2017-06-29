@@ -66,7 +66,17 @@
                                 <ListView.ItemTemplate>
                                     <DataTemplate>
                                         <DockPanel>
-                                            <TextBlock Height="100" TextAlignment="Center"
+                                            <Border BorderBrush="Silver" BorderThickness="1" CornerRadius="8,8,3,3">
+
+                                                <Border.Background>
+                                                    <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                                        <GradientStop Color="LightYellow" Offset="0.0" />
+                                                        <GradientStop Color="Yellow" Offset="0.5" />
+                                                        <GradientStop Color="YellowGreen" Offset="1.0" />
+                                                    </LinearGradientBrush>
+                                                </Border.Background>
+                                            
+                                            <TextBlock Height="40" TextAlignment="Center"
                                                        FontWeight="Medium"
                                              Margin="2 2 2 2"
                                             x:Name="JobLength"
@@ -78,10 +88,10 @@
                                                     </TransformGroup>
                                                 </TextBlock.RenderTransform>
                                             </TextBlock>
-
+                                            </Border>
                                             <StackPanel>
                                             <WrapPanel>
-                                                <Image Name="FirmLogo" Source="{Binding Value.IconForElement}" Width="75" Height="Auto" Margin="2 2 2 2" >
+                                                <Image Name="FirmLogo" Source="{Binding Value.IconForElement}" Width="75" Height="Auto" Margin="10 2 2 2" >
                                                     <Image.RenderTransform>
                                                         <RotateTransform CenterX="30" CenterY="30" />
                                                     </Image.RenderTransform>
@@ -102,7 +112,7 @@
                                                 <TextBlock Text="{Binding Value.FirmName}" FontWeight="Bold" Margin="5 0 5 0"/>
                                                 <TextBlock Text="{Binding Value.Name}" FontWeight="Bold" Foreground="BlueViolet"/>
                                             </WrapPanel>
-                                            <TextBlock MinHeight="86" Text="{Binding Value.Description}" FontWeight="Light"/>
+                                            <TextBlock MinHeight="86" Text="{Binding Value.Description}" FontWeight="Light" Margin="10 0 0 0"/>
                                         </StackPanel>
                                         </DockPanel>
                                     </DataTemplate>
@@ -161,7 +171,7 @@
                     <TabItem.Header>
                         <StackPanel Orientation="Horizontal">
                             <Image Source="/Logos/case.png" Width="24" />
-                            <TextBlock Text="Formation continue" Foreground="Green" />
+                            <TextBlock Text="Formation continue" Foreground="BlueViolet" />
                         </StackPanel>
                     </TabItem.Header>
 
@@ -183,7 +193,7 @@
                     <TabItem.Header>
                         <StackPanel Orientation="Horizontal">
                             <Image Source="/Logos/Home.png" Width="24" />
-                            <TextBlock Text="Compétences managériales" Foreground="Green" />
+                            <TextBlock Text="Compétences managériales" Foreground="DarkGoldenrod" />
                         </StackPanel>
                     </TabItem.Header>
 
@@ -220,7 +230,7 @@
                     <TabItem.Header>
                         <StackPanel Orientation="Horizontal">
                             <Image Source="/Logos/Home.png" Width="24" />
-                            <TextBlock Text="Langues" Foreground="Green" />
+                            <TextBlock Text="Langues" Foreground="SaddleBrown" />
                         </StackPanel>
                     </TabItem.Header>
                     <ListView Margin="10" Name="m_languagesList">
@@ -237,7 +247,7 @@
                     <TabItem.Header>
                         <StackPanel Orientation="Horizontal">
                             <Image Source="/Logos/Home.png" Width="24" />
-                            <TextBlock Text="Loisirs" Foreground="Green" />
+                            <TextBlock Text="Loisirs" Foreground="SlateBlue" />
                         </StackPanel>
                     </TabItem.Header>
                     <ListView Margin="10" Name="m_hobbiesList">
