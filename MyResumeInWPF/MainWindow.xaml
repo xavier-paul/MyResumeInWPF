@@ -66,7 +66,7 @@
                                 <ListView.ItemTemplate>
                                     <DataTemplate>
                                         <DockPanel>
-                                            <TextBlock Height="Auto" TextAlignment="Center"
+                                            <TextBlock Height="100" TextAlignment="Center"
                                                        FontWeight="Medium"
                                              Margin="2 2 2 2"
                                             x:Name="JobLength"
