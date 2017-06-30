@@ -191,7 +191,7 @@
                 <TabItem>
                     <TabItem.Header>
                         <StackPanel Orientation="Horizontal">
-                            <Image Source="/Logos/Home.png" Width="24" Margin="0 0 4 0"/>
+                            <Image Source="/Logos/manager.png" Width="24" Margin="0 0 4 0"/>
                             <TextBlock Text="Compétences managériales" Foreground="DarkGoldenrod" />
                         </StackPanel>
                     </TabItem.Header>

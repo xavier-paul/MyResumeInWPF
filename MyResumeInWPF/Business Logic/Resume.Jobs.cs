@@ -59,7 +59,7 @@ namespace MyResume
             Jobs.Add(v_index++, new ProResumeElement
             {
                 Name = "Stage de fin d’études",
-                Description = "Portage d’une application de surveillance de centrale électrique, en Web(JSP et servlet).",
+                Description = "Portage d’une application de surveillance de centrale électrique, en Web (JSP et servlet).",
                 IconForElement = @"entreprises\Alstom.png",
                 FirmName = "Alstom Power",
                 StartingDate = new DateTime(2002, 04, 01),
@@ -74,6 +74,16 @@ namespace MyResume
                 FirmName = "Capra Prévoyance",
                 StartingDate = new DateTime(2001, 07, 01),
                 EndingDate = new DateTime(2001, 09, 01)
+            });
+
+            Jobs.Add(v_index++, new ProResumeElement
+            {
+                Name = "Freelance",
+                Description = "Réalisation d’un Shareware (« Sharelook ») publié aux Editions ATLAS dans leur revue « PC A FOND n° 47 » en Février 2002.",
+                IconForElement = @"entreprises\atlas-editions-74641.jpg",
+                FirmName = "Editions Atlas",
+                StartingDate = new DateTime(2000, 07, 01),
+                EndingDate = new DateTime(2000, 10, 01)
             });
 
             Jobs.Add(v_index++, new ProResumeElement

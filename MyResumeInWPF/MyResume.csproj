@@ -114,6 +114,11 @@
     <Resource Include="Logos\icones CV.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Logos\github.png" />
+    <Resource Include="Logos\manager.png" />
+    <Resource Include="Data\Resume.xml">
+      <SubType>Designer</SubType>
+    </Resource>
     <Content Include="French voice\3-RSSolo4FrenchVirginie.exe" />
     <Content Include="HomeForGoogleMaps.html" />
     <Resource Include="Logos\hobbies.png" />

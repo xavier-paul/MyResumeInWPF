@@ -30,7 +30,7 @@
             Learning.Add(v_index++, new LearningResumeElement
             {
                 Name = "Techniques avancées en C#",
-                Description = "(NuGet, Tests, Generics, TPL, Async/Await, Dependency Injection, LinQ, Extension Methods, JSON / REST, PowerShell, Transaction Scope…)",
+                Description = "NuGet, Tests, Generics, TPL, Async/Await, Dependency Injection, LinQ, Extension Methods, JSON / REST, PowerShell, Transaction Scope…",
                 Year = 2016,
                 Firm = "(Interne)",
                 DayLength = 12
@@ -65,7 +65,7 @@
             Learning.Add(v_index++, new LearningResumeElement
             {
                 Name = "C# 5.0 / VS 2012",
-                Description = "mise en oeuvre des nouveautés",
+                Description = "Mise en oeuvre des nouveautés",
                 Year = 2014,
                 Firm = "ORSYS",
                 DayLength = 5
@@ -91,7 +91,7 @@
             Learning.Add(v_index++, new LearningResumeElement
             {
                 Name = "ASP.NET",
-                Description = "Creations d’applications Web",
+                Description = "Creation d’applications Web",
                 Year = 2013,
                 Firm = "Learning Tree",
                 DayLength = 4
