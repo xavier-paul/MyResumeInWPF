@@ -171,57 +171,18 @@ namespace MyResume {
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
     public partial class ResumeDataHome {
         
-        private ResumeDataHomeAddress[] addressField;
-        
-        private ResumeDataHomeEmail[] emailField;
-        
-        private ResumeDataHomePhone[] phoneField;
-        
-        private ResumeDataHomeGitHub[] gitHubField;
+        private ResumeDataHomeHomeElement[] homeElementField;
         
         private string iconField;
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("Address", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true)]
-        public ResumeDataHomeAddress[] Address {
+        [System.Xml.Serialization.XmlElementAttribute("HomeElement", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true)]
+        public ResumeDataHomeHomeElement[] HomeElement {
             get {
-                return this.addressField;
+                return this.homeElementField;
             }
             set {
-                this.addressField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("Email", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true)]
-        public ResumeDataHomeEmail[] Email {
-            get {
-                return this.emailField;
-            }
-            set {
-                this.emailField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("Phone", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true)]
-        public ResumeDataHomePhone[] Phone {
-            get {
-                return this.phoneField;
-            }
-            set {
-                this.phoneField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("GitHub", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public ResumeDataHomeGitHub[] GitHub {
-            get {
-                return this.gitHubField;
-            }
-            set {
-                this.gitHubField = value;
+                this.homeElementField = value;
             }
         }
         
@@ -243,7 +204,7 @@ namespace MyResume {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class ResumeDataHomeAddress {
+    public partial class ResumeDataHomeHomeElement {
         
         private string iconField;
         
@@ -281,137 +242,6 @@ namespace MyResume {
             }
             set {
                 this.valueField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class ResumeDataHomeEmail {
-        
-        private string iconField;
-        
-        private string indexField;
-        
-        private string valueField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string icon {
-            get {
-                return this.iconField;
-            }
-            set {
-                this.iconField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string index {
-            get {
-                return this.indexField;
-            }
-            set {
-                this.indexField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlTextAttribute()]
-        public string Value {
-            get {
-                return this.valueField;
-            }
-            set {
-                this.valueField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class ResumeDataHomePhone {
-        
-        private string iconField;
-        
-        private string indexField;
-        
-        private string valueField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string icon {
-            get {
-                return this.iconField;
-            }
-            set {
-                this.iconField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string index {
-            get {
-                return this.indexField;
-            }
-            set {
-                this.indexField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlTextAttribute()]
-        public string Value {
-            get {
-                return this.valueField;
-            }
-            set {
-                this.valueField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class ResumeDataHomeGitHub {
-        
-        private string iconField;
-        
-        private string indexField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string icon {
-            get {
-                return this.iconField;
-            }
-            set {
-                this.iconField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string index {
-            get {
-                return this.indexField;
-            }
-            set {
-                this.indexField = value;
             }
         }
     }

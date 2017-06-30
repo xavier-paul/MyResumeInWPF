@@ -17,40 +17,14 @@
         <xs:element name="Home">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="Address" nillable="true" minOccurs="0" maxOccurs="unbounded">
+              <xs:element name="HomeElement" nillable="true" minOccurs="0" maxOccurs="unbounded">
                 <xs:complexType>
-                  <xs:simpleContent msdata:ColumnName="Address_Text" msdata:Ordinal="2">
+                  <xs:simpleContent msdata:ColumnName="HomeElement_Text" msdata:Ordinal="2">
                     <xs:extension base="xs:string">
                       <xs:attribute name="icon" type="xs:string" />
                       <xs:attribute name="index" type="xs:string" />
                     </xs:extension>
                   </xs:simpleContent>
-                </xs:complexType>
-              </xs:element>
-              <xs:element name="Email" nillable="true" minOccurs="0" maxOccurs="unbounded">
-                <xs:complexType>
-                  <xs:simpleContent msdata:ColumnName="Email_Text" msdata:Ordinal="2">
-                    <xs:extension base="xs:string">
-                      <xs:attribute name="icon" type="xs:string" />
-                      <xs:attribute name="index" type="xs:string" />
-                    </xs:extension>
-                  </xs:simpleContent>
-                </xs:complexType>
-              </xs:element>
-              <xs:element name="Phone" nillable="true" minOccurs="0" maxOccurs="unbounded">
-                <xs:complexType>
-                  <xs:simpleContent msdata:ColumnName="Phone_Text" msdata:Ordinal="2">
-                    <xs:extension base="xs:string">
-                      <xs:attribute name="icon" type="xs:string" />
-                      <xs:attribute name="index" type="xs:string" />
-                    </xs:extension>
-                  </xs:simpleContent>
-                </xs:complexType>
-              </xs:element>
-              <xs:element name="GitHub" minOccurs="0" maxOccurs="unbounded">
-                <xs:complexType>
-                  <xs:attribute name="icon" type="xs:string" />
-                  <xs:attribute name="index" type="xs:string" />
                 </xs:complexType>
               </xs:element>
             </xs:sequence>

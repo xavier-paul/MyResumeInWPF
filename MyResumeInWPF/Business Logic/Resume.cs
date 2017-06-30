@@ -111,9 +111,21 @@ namespace MyResume
         {
             ResumeData v_myResumeFromXML = LoadFromXML(AppLocationFinder.Current + @"\Data\ResumeData.xml");
             Speak();
-            Init();
+            //Init();
+            Init(v_myResumeFromXML);
         }
 
+        private void Init(ResumeData p_resume)
+        {
+            InitCivil(p_resume);
+            InitPro(p_resume);
+            InitHobbies(p_resume);
+            InitLearning(p_resume);
+            InitTechSkills(p_resume);
+            InitLanguages(p_resume);
+            InitManagerSkills(p_resume);
+        }
+        
         public bool CheckVoiceAvailability(SpeechSynthesizer p_speaker, string p_voice)
         {
             foreach (InstalledVoice v_allVoices in p_speaker.GetInstalledVoices()) // Je liste les voix installées
@@ -147,6 +159,7 @@ namespace MyResume
             v_speechSynthesizer.SpeakAsync(v_promptBuilder);
         }
 
+        [Obsolete("Les données se trouvent maintenant dans un fichier XML", false)]
         private void Init()
         {
             InitCivil();
@@ -157,8 +170,25 @@ namespace MyResume
             InitLanguages();
             InitManagerSkills();
         }
-             
 
+        private void InitCivil(ResumeData p_resume)
+        {
+            ResumeDataHome v_home = (ResumeDataHome)p_resume.Items[0];
+
+            for (int i = 0; i < v_home.HomeElement.Length; i++)
+            {
+                ResumeDataHomeHomeElement v_adr = (ResumeDataHomeHomeElement)v_home.HomeElement.GetValue(i);
+                int v_index = Convert.ToInt16(v_adr.index);
+                Civil.Add(v_index, new SimpleResumeElement
+                {
+                    Description = v_adr.Value.ToString().Replace("\\n", Environment.NewLine),
+                    IconForElement = v_adr.icon
+                });
+            }
+
+        }
+        
+        [Obsolete("Les données se trouvent maintenant dans un fichier XML", false)]
         private void InitCivil()
         {
             int v_index = 1;
@@ -180,6 +210,6 @@ namespace MyResume
                 IconForElement = "Chat.png"
             });
         }
-                  
+        
     }
 }

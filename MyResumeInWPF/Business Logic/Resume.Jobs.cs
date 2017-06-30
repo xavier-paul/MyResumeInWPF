@@ -4,6 +4,7 @@ namespace MyResume
 {
     public partial class Resume
     {
+        [Obsolete("Les données se trouvent maintenant dans un fichier XML", false)]
         private void InitPro()
         {
             int v_index = 1;
@@ -96,5 +97,27 @@ namespace MyResume
                 EndingDate = new DateTime(1999, 09, 01)
             });
         }
+
+        private void InitPro(ResumeData p_resume)
+        {
+            ResumeDataJobs v_home = (ResumeDataJobs)p_resume.Items[1];
+
+            for (int i = 0; i < v_home.Job.Length; i++)
+            {
+                ResumeDataJobsJob v_adr = (ResumeDataJobsJob)v_home.Job.GetValue(i);
+                int v_index = Convert.ToInt16(v_adr.index);
+                Jobs.Add(v_index, new ProResumeElement
+                {
+                    Name = v_adr.name,
+                    Description = !string.IsNullOrEmpty(v_adr.Value) ? v_adr.Value.ToString().Replace("\\n", Environment.NewLine) : null,
+                    IconForElement = v_adr.icon,
+                    FirmName = v_adr.firm,
+                    StartingDate = Convert.ToDateTime(v_adr.startingDate),
+                    EndingDate= !string.IsNullOrEmpty(v_adr.endingDate) ? Convert.ToDateTime(v_adr.endingDate) : new DateTime(2017,9,1)
+                });
+            }
+
+        }
     }
+
 }

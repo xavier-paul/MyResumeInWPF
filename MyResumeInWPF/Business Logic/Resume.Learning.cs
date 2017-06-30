@@ -1,7 +1,10 @@
-﻿namespace MyResume
+﻿using System;
+
+namespace MyResume
 {
     public partial class Resume
     {
+        [Obsolete("Les données se trouvent maintenant dans un fichier XML", false)]
         private void InitLearning()
         {
             int v_index = 1;
@@ -96,6 +99,26 @@
                 Firm = "Learning Tree",
                 DayLength = 4
             });
+
+        }
+
+        private void InitLearning(ResumeData p_resume)
+        {
+            ResumeDataLearning v_home = (ResumeDataLearning)p_resume.Items[4];
+
+            for (int i = 0; i < v_home.Learn.Length; i++)
+            {
+                ResumeDataLearningLearn v_adr = (ResumeDataLearningLearn)v_home.Learn.GetValue(i);
+                int v_index = Convert.ToInt16(v_adr.index);
+                Learning.Add(v_index, new LearningResumeElement
+                {
+                    Name = v_adr.name,
+                    Description = !string.IsNullOrEmpty(v_adr.Value) ? v_adr.Value.ToString().Replace("\\n", Environment.NewLine) : null,
+                    Year = Convert.ToUInt16(v_adr.year),
+                    Firm = v_adr.firm,
+                    DayLength = !string.IsNullOrEmpty(v_adr.length) ? (ushort?)Convert.ToUInt16(v_adr.length) : null
+                });
+            }
 
         }
     }
