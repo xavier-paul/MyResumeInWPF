@@ -109,6 +109,7 @@ namespace MyResume
 
         public Resume()
         {
+            ResumeData v_myResumeFromXML = LoadFromXML(AppLocationFinder.Current + @"\Data\ResumeData.xml");
             Speak();
             Init();
         }
