@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<xs:schema id="Resume" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+<xs:schema id="ResumeData" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
   <xs:element name="Skill" nillable="true">
     <xs:complexType>
       <xs:simpleContent msdata:ColumnName="Skill_Text" msdata:Ordinal="2">
@@ -10,7 +10,7 @@
       </xs:simpleContent>
     </xs:complexType>
   </xs:element>
-  <xs:element name="Resume" msdata:IsDataSet="true" msdata:Locale="en-US">
+  <xs:element name="ResumeData" msdata:IsDataSet="true" msdata:Locale="en-US">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
         <xs:element ref="Skill" />

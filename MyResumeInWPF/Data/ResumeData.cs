@@ -71,18 +71,18 @@ namespace MyResume {
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
     [System.Xml.Serialization.XmlRootAttribute(Namespace="", IsNullable=false)]
-    public partial class Resume {
+    public partial class ResumeData {
         
         private object[] itemsField;
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("Hobbies", typeof(ResumeHobbies), Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        [System.Xml.Serialization.XmlElementAttribute("Home", typeof(ResumeHome), Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        [System.Xml.Serialization.XmlElementAttribute("Jobs", typeof(ResumeJobs), Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        [System.Xml.Serialization.XmlElementAttribute("Languages", typeof(ResumeLanguages), Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        [System.Xml.Serialization.XmlElementAttribute("Learning", typeof(ResumeLearning), Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        [System.Xml.Serialization.XmlElementAttribute("Hobbies", typeof(ResumeDataHobbies), Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        [System.Xml.Serialization.XmlElementAttribute("Home", typeof(ResumeDataHome), Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        [System.Xml.Serialization.XmlElementAttribute("Jobs", typeof(ResumeDataJobs), Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        [System.Xml.Serialization.XmlElementAttribute("Languages", typeof(ResumeDataLanguages), Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        [System.Xml.Serialization.XmlElementAttribute("Learning", typeof(ResumeDataLearning), Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         [System.Xml.Serialization.XmlElementAttribute("Skill", typeof(Skill), IsNullable=true)]
-        [System.Xml.Serialization.XmlElementAttribute("Skills", typeof(ResumeSkills), Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        [System.Xml.Serialization.XmlElementAttribute("Skills", typeof(ResumeDataSkills), Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public object[] Items {
             get {
                 return this.itemsField;
@@ -99,15 +99,15 @@ namespace MyResume {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class ResumeHobbies {
+    public partial class ResumeDataHobbies {
         
-        private ResumeHobbiesHobbie[] hobbieField;
+        private ResumeDataHobbiesHobbie[] hobbieField;
         
         private string iconField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute("Hobbie", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true)]
-        public ResumeHobbiesHobbie[] Hobbie {
+        public ResumeDataHobbiesHobbie[] Hobbie {
             get {
                 return this.hobbieField;
             }
@@ -134,7 +134,7 @@ namespace MyResume {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class ResumeHobbiesHobbie {
+    public partial class ResumeDataHobbiesHobbie {
         
         private string indexField;
         
@@ -169,21 +169,21 @@ namespace MyResume {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class ResumeHome {
+    public partial class ResumeDataHome {
         
-        private ResumeHomeAddress[] addressField;
+        private ResumeDataHomeAddress[] addressField;
         
-        private ResumeHomeEmail[] emailField;
+        private ResumeDataHomeEmail[] emailField;
         
-        private ResumeHomePhone[] phoneField;
+        private ResumeDataHomePhone[] phoneField;
         
-        private ResumeHomeGitHub[] gitHubField;
+        private ResumeDataHomeGitHub[] gitHubField;
         
         private string iconField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute("Address", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true)]
-        public ResumeHomeAddress[] Address {
+        public ResumeDataHomeAddress[] Address {
             get {
                 return this.addressField;
             }
@@ -194,7 +194,7 @@ namespace MyResume {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute("Email", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true)]
-        public ResumeHomeEmail[] Email {
+        public ResumeDataHomeEmail[] Email {
             get {
                 return this.emailField;
             }
@@ -205,7 +205,7 @@ namespace MyResume {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute("Phone", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true)]
-        public ResumeHomePhone[] Phone {
+        public ResumeDataHomePhone[] Phone {
             get {
                 return this.phoneField;
             }
@@ -216,7 +216,7 @@ namespace MyResume {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute("GitHub", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public ResumeHomeGitHub[] GitHub {
+        public ResumeDataHomeGitHub[] GitHub {
             get {
                 return this.gitHubField;
             }
@@ -243,7 +243,7 @@ namespace MyResume {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class ResumeHomeAddress {
+    public partial class ResumeDataHomeAddress {
         
         private string iconField;
         
@@ -291,7 +291,7 @@ namespace MyResume {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class ResumeHomeEmail {
+    public partial class ResumeDataHomeEmail {
         
         private string iconField;
         
@@ -339,7 +339,7 @@ namespace MyResume {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class ResumeHomePhone {
+    public partial class ResumeDataHomePhone {
         
         private string iconField;
         
@@ -387,7 +387,7 @@ namespace MyResume {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class ResumeHomeGitHub {
+    public partial class ResumeDataHomeGitHub {
         
         private string iconField;
         
@@ -422,15 +422,15 @@ namespace MyResume {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class ResumeJobs {
+    public partial class ResumeDataJobs {
         
-        private ResumeJobsJob[] jobField;
+        private ResumeDataJobsJob[] jobField;
         
         private string iconField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute("Job", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true)]
-        public ResumeJobsJob[] Job {
+        public ResumeDataJobsJob[] Job {
             get {
                 return this.jobField;
             }
@@ -457,7 +457,7 @@ namespace MyResume {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class ResumeJobsJob {
+    public partial class ResumeDataJobsJob {
         
         private string iconField;
         
@@ -557,15 +557,15 @@ namespace MyResume {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class ResumeLanguages {
+    public partial class ResumeDataLanguages {
         
-        private ResumeLanguagesLanguage[] languageField;
+        private ResumeDataLanguagesLanguage[] languageField;
         
         private string iconField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute("Language", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true)]
-        public ResumeLanguagesLanguage[] Language {
+        public ResumeDataLanguagesLanguage[] Language {
             get {
                 return this.languageField;
             }
@@ -592,7 +592,7 @@ namespace MyResume {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class ResumeLanguagesLanguage {
+    public partial class ResumeDataLanguagesLanguage {
         
         private string indexField;
         
@@ -627,15 +627,15 @@ namespace MyResume {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class ResumeLearning {
+    public partial class ResumeDataLearning {
         
-        private ResumeLearningLearn[] learnField;
+        private ResumeDataLearningLearn[] learnField;
         
         private string iconField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute("Learn", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true)]
-        public ResumeLearningLearn[] Learn {
+        public ResumeDataLearningLearn[] Learn {
             get {
                 return this.learnField;
             }
@@ -662,7 +662,7 @@ namespace MyResume {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class ResumeLearningLearn {
+    public partial class ResumeDataLearningLearn {
         
         private string indexField;
         
@@ -749,17 +749,17 @@ namespace MyResume {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class ResumeSkills {
+    public partial class ResumeDataSkills {
         
-        private ResumeSkillsManagement[] managementField;
+        private ResumeDataSkillsManagement[] managementField;
         
-        private ResumeSkillsTechnical[] technicalField;
+        private ResumeDataSkillsTechnical[] technicalField;
         
         private string iconField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute("Management", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public ResumeSkillsManagement[] Management {
+        public ResumeDataSkillsManagement[] Management {
             get {
                 return this.managementField;
             }
@@ -770,7 +770,7 @@ namespace MyResume {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute("Technical", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public ResumeSkillsTechnical[] Technical {
+        public ResumeDataSkillsTechnical[] Technical {
             get {
                 return this.technicalField;
             }
@@ -797,7 +797,7 @@ namespace MyResume {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class ResumeSkillsManagement {
+    public partial class ResumeDataSkillsManagement {
         
         private Skill[] skillField;
         
@@ -832,7 +832,7 @@ namespace MyResume {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class ResumeSkillsTechnical {
+    public partial class ResumeDataSkillsTechnical {
         
         private Skill[] skillField;
         
