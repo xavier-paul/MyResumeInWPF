@@ -45,7 +45,7 @@
                                 </ListView>
                             </Border>
                         </StackPanel>
-                        <DockPanel Width="780" Height="350" Margin="0,100,0,0">
+                        <DockPanel Width="780" Height="350" Margin="0,130,0,0">
                             <WebBrowser Name="m_googleMaps" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" 
                                         Margin="2,2,2,2" Width="Auto" Height="Auto" />
                         </DockPanel>
